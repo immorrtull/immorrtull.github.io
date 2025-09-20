@@ -21,18 +21,20 @@ mediaItems.forEach(item => {
 
   if (item.type === 'video') {
     mediaHTML = `
-      <video class="media" muted autoplay playsinline preload="auto" loop>
+      <video class="media" muted autoplay playsinline preload="auto" loop style="max-width: 100%; max-height: 100%;">
         <source src="${item.src}" type="video/mp4">
       </video>
     `;
   } else {
-    mediaHTML = `<img class="media" src="${item.src}" alt="">`;
+    mediaHTML = `<img class="media" src="${item.src}" alt="" style="max-width: 100%; max-height: 100%;">`;
   }
 
   wrapper.innerHTML = `
     ${mediaHTML}
-    <img class="overlay" src="${overlaySrc}" alt="Overlay">
+    <img class="overlay" src="${overlaySrc}" alt="Overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
   `;
+  wrapper.style.position = 'relative';
+  wrapper.style.cursor = 'pointer';
 
   wrapper.addEventListener('click', () => {
     openLightbox(item);
@@ -42,8 +44,8 @@ mediaItems.forEach(item => {
 });
 
 function openLightbox(item) {
-  // Remove existing media inside lightbox content
-  lightboxContent.querySelectorAll('video, img').forEach(el => el.remove());
+  // Clear existing content
+  lightboxContent.innerHTML = '';
 
   if (item.type === 'video') {
     const video = document.createElement('video');
@@ -52,33 +54,30 @@ function openLightbox(item) {
     video.autoplay = true;
     video.style.maxWidth = '100%';
     video.style.maxHeight = '100%';
-    lightboxContent.insertBefore(video, lightboxDescription);
+    lightboxContent.appendChild(video);
   } else {
     const img = document.createElement('img');
     img.src = item.src;
     img.style.maxWidth = '100%';
     img.style.maxHeight = '100%';
-    lightboxContent.insertBefore(img, lightboxDescription);
+    lightboxContent.appendChild(img);
   }
 
-  // Show description text
   lightboxDescription.textContent = item.description || '';
-
-  // Show lightbox
   lightbox.style.display = 'flex';
 }
 
 lightboxClose.addEventListener('click', () => {
   lightbox.style.display = 'none';
 
-  // Pause video if any
+  // Pause any video
   const video = lightboxContent.querySelector('video');
   if (video) {
     video.pause();
   }
 });
 
-// Also close lightbox if you click outside the content
+// Close on background click
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) {
     lightboxClose.click();
