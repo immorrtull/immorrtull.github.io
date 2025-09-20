@@ -2,14 +2,37 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    padding-top: 0px; /* Adjust based on the height of your nav */
 }
 
+/* Style the navigation bar */
 nav {
-  display: flex;
-  justify-content: space-between; /* pushes title left, links right */
-  align-items: center;
-  background-color: #333;
-  padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    background-color: #333; /* Or any color you prefer */
+    z-index: 1000; /* Ensures it stays on top of other content */
+    width: 100%;
+    padding: 10px 0; /* Adds space around the nav items */
+    display: flex;
+    justify-content: space-between; /* pushes title left, links right */
+    align-items: center;
+    background-color: #333;
+    padding: 14px 20px;
+}
+
+/* Style for the nav items */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+/* Optionally, you can add a hover effect */
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 4px;
 }
 
 .nav-title a{
@@ -28,10 +51,6 @@ nav {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-}
-
-.nav-links a:hover {
-    background-color: #575757;
 }
 
 .nav-links a:active {
