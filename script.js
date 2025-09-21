@@ -1,13 +1,14 @@
 // Media items array
 const mediaItems = [
-  { type: 'streamable', src: 'https://streamable.com/e/9zgpnc?', description: 'Documentary Video 1', section: 'documentary' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 1', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY', description: 'Documentary Video 1', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/qEefOJXaK1A?si=XdOVplP4ODCZhG-Z', description: 'Image 1', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', description: 'Image 1', section: 'documentary' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', description: 'Scripted Video 1', section: 'scripted' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 2', section: 'scripted' },
-  { type: 'video', src: 'video2.mp4', description: 'Social Media Video 1', section: 'socialmedia' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 3', section: 'socialmedia' },
-  { type: 'video', src: 'images/Image-1.png', description: 'Podcasts Video 1', section: 'podcasts' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 4', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', description: 'Image 2', section: 'scripted' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/jK5JKuz_g4c?si=Uuay9HNYGxjpkHMx', description: 'Social Media Video 1', section: 'scripted' },
+  { type: 'youtube', src: 'images/Image-1.png', description: 'Image 3', section: 'socialmedia' },
+  { type: 'youtube', src: 'images/Image-1.png', description: 'Podcasts Video 1', section: 'podcasts' },
+  { type: 'youtube', src: 'images/Image-1.png', description: 'Image 4', section: 'podcasts' },
   { type: 'video', src: 'video2.mp4', description: 'Graphic Design Video 1', section: 'graphicdesign' },
   { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'graphicdesign' },
 ];
