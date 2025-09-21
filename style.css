@@ -6,6 +6,40 @@ body {
   padding-top: 0px;
 }
 
+/* === PAGE SECTION STYLES === */
+
+#work {
+  background-color: #3498db; /* Blue */
+  padding: 50px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+#contact {
+  background-color: #e74c3c; /* Red */
+  padding: 50px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+#bio {
+  background-color: #2ecc71; /* Green */
+  padding: 50px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+#main {
+  background-color: #f39c12; /* Orange */
+  padding: 50px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
 /* === NAVIGATION BAR === */
 nav {
   position: sticky;
@@ -51,6 +85,7 @@ nav {
 
 /* Grid container */
 #grid {
+  background-color: #3498db; /* Blue */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
@@ -120,7 +155,7 @@ nav {
   top: 20px;
   right: 30px;
   font-size: 32px;
-  color: white;
+  color: rgb(255, 255, 255);
   background: none;
   border: none;
   cursor: pointer;
