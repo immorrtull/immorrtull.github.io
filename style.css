@@ -62,7 +62,7 @@ nav {
   background-color: #333;
   z-index: 1000;
   width: 100vw;
-  padding: 15px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between; /* Push title left, links right */
   align-items: center;
@@ -73,7 +73,7 @@ nav {
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
-  padding-left: 30px; /* space from left edge */
+  padding-left: 15vw; /* space from left edge */
 }
 
 .nav-title a:hover {
@@ -83,7 +83,7 @@ nav {
 .nav-links {
   display: flex;  /* arrange links in a row */
   gap: 20px;      /* space between links */
-  padding-right: 50px; /* space from right edge */
+  padding-right: 15vw; /* space from right edge */
 }
 
 .nav-links a {
