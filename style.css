@@ -44,15 +44,15 @@ img {
 /* === PAGE SECTION STYLES === */
 
 #work {
-  background-color: #3498db; /* Blue */
-  padding: 50px;
+  background-color: #04AA6D; /* Blue */
+  padding: 20px;
   color: white;
   text-align: center;
   font-size: 24px;
 }
 
 #contact {
-  background-color: #e74c3c; /* Red */
+  background-color: #e5512c; /* Red */
   padding: 50px;
   color: white;
   text-align: center;
@@ -60,19 +60,60 @@ img {
 }
 
 #bio {
-  background-color: #2ecc71; /* Green */
+  background-color: #ffffff; /* Green */
+  padding: 50px;
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+}
+
+#main {
+  background-color: #ffffff; /* Orange */
   padding: 50px;
   color: white;
   text-align: center;
   font-size: 24px;
 }
 
-#main {
-  background-color: #f39c12; /* Orange */
-  padding: 50px;
+
+#documentary {
+  background-color: #333; /* Blue */
+  padding: 10px;
   color: white;
-  text-align: center;
-  font-size: 24px;
+  text-align: left;
+  font-size: 12px;
+}
+
+#scripted {
+  background-color: #333;; /* Blue */
+  padding: 10px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+#socialmedia {
+  background-color: #333; /* Blue */
+  padding: 10px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+#podcasts {
+  background-color: #333; /* Blue */
+  padding: 10px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+#graphicsdesign {
+  background-color: #333; /* Blue */
+  padding: 10px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
 }
 
 /* === NAVIGATION BAR === */
@@ -121,21 +162,36 @@ nav {
   border-radius: 4px;
 }
 
-/* Grid container */
-#grid {
-  background-color: #3498db; /* Blue */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 16px;
+/* === WORK NAV BAR === */
+
+.work-links {
+  display: flex;  /* arrange links in a row */
+  gap: 20px;      /* space between links */
+  
 }
 
-/* Grid item */
-.grid-item {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
+.work-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  /* remove margin and padding to avoid weird spacing */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.work-links a:hover {
+  color: #04AA6D;
+  border-radius: 4px;
+}
+
+/* Grid container for each section */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 20px; /* Space between grid items */
+  padding: 20px;
 }
 
 /* Media inside grid item */
@@ -146,10 +202,17 @@ nav {
   display: block;
 }
 
+/* Grid item wrapper */
+.grid-item {
+  position: relative;
+  cursor: pointer;
+}
+
 /* Overlay on top of media */
 .overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -163,7 +226,7 @@ nav {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
   flex-direction: column;
