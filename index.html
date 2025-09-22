@@ -32,54 +32,78 @@
       overflow:hidden;"></iframe></div>
     </div>
 
-    <!-- Work Section -->
-    <div id="work">
-      <h2>Work Samples</h2>
-      <div class="work-links">
-        <a href="#documentary">Documentary</a> <!-- Link to Work section -->
-        <a href="#scripted">Scripted</a> <!-- Link to Bio section -->
-        <a href="#socialmedia">Social Media</a> <!-- Link to Contact section -->
-        <a href="#podcasts">Podcasts</a> <!-- Link to Contact section -->
-        <a href="#multimedia">Multimedia Projects</a> <!-- Link to Contact section -->
-        </div>
+ <!-- Work Section -->
+  <div id="work">
+    <h2>Work Samples</h2>
+    <div class="tab-container">
+      <div class="tab active" data-tab="documentary">Documentary</div>
+      <div class="tab" data-tab="scripted">Scripted</div>
+      <div class="tab" data-tab="socialmedia">Social Media</div>
+      <div class="tab" data-tab="podcasts">Podcasts</div>
+      <div class="tab" data-tab="multimedia">Multimedia Projects</div>
     </div>
-  
-<div id="lightbox" style="display: none;">
-  <div id="lightbox-content">
-    <button id="lightbox-close">&times;</button>
-    <div id="lightbox-description"></div>
   </div>
-</div>
 
-  <!-- Documentary -->
- <div id="documentary">
-  <h2>Documentary</h2>
-  <div class="documentary-grid section-grid"></div> <!-- Grid for Documentary -->
-</div>
+  <!-- Tab Content Sections -->
+  <div class="tab-content">
 
-<!-- Scripted -->
-<div id="scripted">
-  <h2>Scripted</h2>
-<div class="scripted-grid section-grid"></div> <!-- Grid for Scripted -->
-</div>
+    <!-- Documentary -->
+    <div id="documentary" class="work-section active">
+      <div class="documentary-grid section-grid"></div>
+    </div>
 
-<!-- Social Media -->
-<div id="socialmedia">
-  <h2>Social Media</h2>
-  <div class="socialmedia-grid section-grid"></div> <!-- Grid for Social Media -->
-</div>
+    <!-- Scripted -->
+    <div id="scripted" class="work-section">
+      <div class="scripted-grid section-grid"></div>
+    </div>
 
-<!-- Podcasts -->
-<div id="podcasts">
-  <h2>Podcasts</h2>
-  <div class="podcasts-grid section-grid"></div> <!-- Grid for Podcasts -->
-</div>
+    <!-- Social Media -->
+    <div id="socialmedia" class="work-section">
+      <div class="socialmedia-grid section-grid"></div>
+    </div>
 
-<!-- Graphic Design -->
-<div id="multimedia">
-  <h2>Multimedia Projects</h2>
-  <div class="multimedia-grid section-grid"></div> <!-- Grid for Graphic Design -->
-</div>
+    <!-- Podcasts -->
+    <div id="podcasts" class="work-section">
+      <div class="podcasts-grid section-grid"></div>
+    </div>
+
+    <!-- Multimedia Projects -->
+    <div id="multimedia" class="work-section">
+      <div class="multimedia-grid section-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox (optional - unchanged) -->
+  <div id="lightbox" style="display: none;">
+    <div id="lightbox-content">
+      <button id="lightbox-close">&times;</button>
+      <div id="lightbox-description"></div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.work-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+
+        // Set tab active state
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Show only the selected section
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === target) {
+            section.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 
 <!-- Bio Section -->
     <div id="About">

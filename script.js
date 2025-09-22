@@ -14,7 +14,7 @@ const mediaItems = [
   { type: 'youtube', src: 'https://www.youtube.com/embed/mmyOswVxgng?si=Gm-dlDfovjvVYcNA', description: 'Image 5', section: 'podcasts' },
   { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'multimedia' },
   { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'multimedia' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'multimedia' },
+  { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'graphicdesign' },
 ];
 
 // Lightbox elements
