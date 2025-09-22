@@ -21,8 +21,11 @@ img {
   object-fit: contain;
 }
 
-/* === YOUTUBE STYLES === */
+.subheading {
+  font-size: 14px;
+}
 
+/* === YOUTUBE STYLES === */
 
 .video-container {
   position: relative;
@@ -59,7 +62,7 @@ img {
   font-size: 24px;
 }
 
-#bio {
+#About {
   background-color: #ffffff; /* Green */
   padding: 50px;
   color: #333;
@@ -74,7 +77,6 @@ img {
   text-align: center;
   font-size: 24px;
 }
-
 
 #documentary {
   background-color: #333; /* Blue */
@@ -108,7 +110,7 @@ img {
   font-size: 12px;
 }
 
-#graphicsdesign {
+#multimedia {
   background-color: #333; /* Blue */
   padding: 10px;
   color: white;
@@ -167,7 +169,7 @@ nav {
 .work-links {
   display: flex;  /* arrange links in a row */
   gap: 20px;      /* space between links */
-  
+justify-content: center;
 }
 
 .work-links a {
@@ -181,7 +183,7 @@ nav {
 }
 
 .work-links a:hover {
-  color: #04AA6D;
+  color: #333;
   border-radius: 4px;
 }
 
