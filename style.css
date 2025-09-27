@@ -24,9 +24,12 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5vw 12vw 5vw 12vw;
-  align-items: center;
+  width: 75%;
   text-align: center;
+  display: flex;
+  flex-direction: column; /* Optional: arrange children vertically */
+  align-items: center;
+  box-sizing: border-box; /* Ensure padding doesn’t break layout */
 }
 
 /* === YOUTUBE STYLES === */
