@@ -24,9 +24,10 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5vw; /* or something like 20px */
+  padding: 5vw 12vw 5vw 12vw;
+  align-items: center;
+  text-align: center;
 }
-
 
 /* === YOUTUBE STYLES === */
 
@@ -46,13 +47,10 @@ img {
   height: 100%;
 }
 
-
 /* === PAGE SECTION STYLES === */
 
 #work {
-  background-color: #04AA6D; /* Blue */
-  padding: 70px;
-  padding-bottom: 0px;
+  background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
   font-size: 24px;
@@ -60,15 +58,10 @@ img {
 
 .work-content {
   position: relative;
-  top: -30px; /* move entire block upward */
 }
 
 #About {
-  background-color: #FCFAF9; /* Green */
-  padding: 50px;
-  color: #333;
-  text-align: center;
-  font-size: 24px;
+  background-color: #FCFAF9;
 }
 
 .about-subtitle {
@@ -77,21 +70,18 @@ img {
   color: #333;
   max-width: 90%;
   height: auto;
-  display: block; 
 }
 
 .about-body {
   font-size: clamp(0.5rem, 3vw, 1.5rem);
-  color: #333;
   font-family: 'Arial', sans-serif;
+  color: #333;
   max-width: 90%;
   height: auto;
-  display: block; 
 }
 
 #main {
   background-color: #FCFAF9; /* Orange */
-  padding: 50px;
   color: #FCFAF9;
   text-align: center;
   font-size: 24px;
@@ -330,16 +320,14 @@ nav {
 /* Stork */
 #contact {
   background-color: #f96429; /* Red */
-  padding: 50px;
   color: #FCFAF9;
-  text-align: center;
   font-size: 20px;
 }
 
 .contact-content {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 0px;
   flex-wrap: wrap;
 }
 
