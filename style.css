@@ -34,36 +34,24 @@ img {
 
 /* === YOUTUBE STYLES === */
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* === PAGE SECTION STYLES === */
-
 #work {
+  padding: 5vw 6vw 0vw 6vw;
   background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
   font-size: 24px;
 }
 
-.work-content {
-  position: relative;
+.work-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 #About {
+  padding: 5vw 12vw;
   background-color: #FCFAF9;
 }
 
@@ -84,6 +72,7 @@ img {
 }
 
 #main {
+  padding: 5vw 12vw;
   background-color: #FCFAF9; /* Orange */
   color: #FCFAF9;
   text-align: center;
@@ -253,24 +242,66 @@ nav {
 
 /* Grid container for each section */
 
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-gap: 6vw; /* Space between grid items */
-}
-
 /* Media inside grid item */
 .media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
 }
 
 /* Grid item wrapper */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* prevents overflow */
+  gap: 20px; /* or 6vw */
+}
+
 .grid-item {
-  position: relative;
   cursor: pointer;
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.responsive-video iframe,
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.socialmedia-grid .responsive-video {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* 9:16 aspect ratio (portrait) */
+  overflow: hidden; /* to hide any overflow */
+}
+
+.socialmedia-grid .responsive-video iframe,
+.socialmedia-grid .responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain; /* works for video, ignored for iframe */
+}
+
+.socialmedia-grid .responsive-video iframe,
+.socialmedia-grid .responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Lightbox styles */
@@ -322,6 +353,7 @@ nav {
 
 /* Stork */
 #contact {
+  padding: 5vw 12vw;
   background-color: #f96429; /* Red */
   color: #FCFAF9;
   font-size: 20px;
