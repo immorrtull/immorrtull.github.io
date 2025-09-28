@@ -4,10 +4,12 @@ html,body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Lexend", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 350;
   background-color: #FCFAF9;
   padding-top: 0;
 }
@@ -36,10 +38,12 @@ img {
 
 #work {
   padding: 5vw 6vw 0vw 6vw;
+  font-family: "Lexend", sans-serif;
+  font-variation-settings: "wght" 350;
   background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
-  font-size: 24px;
+  font-size: 2.5vw;
 }
 
 .work-section {
@@ -56,8 +60,8 @@ img {
 }
 
 .about-subtitle {
-  font-size: clamp(0.5rem, 4vw, 1.8rem);
-  font-family: 'Arial', sans-serif;
+  font-size: clamp(0.5rem, 3.5vw, 1.8rem);
+  font-variation-settings: "wght" 450;
   color: #333;
   max-width: 90%;
   height: auto;
@@ -65,7 +69,8 @@ img {
 
 .about-body {
   font-size: clamp(0.5rem, 3vw, 1.5rem);
-  font-family: 'Arial', sans-serif;
+  font-family: 'Public Sans', sans-serif;
+  font-variation-settings: "wght" 350;
   color: #333;
   max-width: 90%;
   height: auto;
@@ -81,9 +86,6 @@ img {
 
 #documentary {
   background-color: #333; /* Blue */
-  padding: 30px;
-  padding-top: 30px;
-  padding-bottom: 70px;
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
@@ -91,9 +93,6 @@ img {
 
 #scripted {
   background-color: #333; /* Blue */
-  padding: 30px;
-  padding-top: 30px;
-  padding-bottom: 70px;
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
@@ -101,9 +100,6 @@ img {
 
 #socialmedia {
   background-color: #333; /* Blue */
-  padding: 30px;
-  padding-top: 30px;
-  padding-bottom: 70px;
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
@@ -111,9 +107,6 @@ img {
 
 #podcasts {
   background-color: #333; /* Blue */
-  padding: 30px;
-  padding-top: 30px;
-  padding-bottom: 70px;
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
@@ -121,9 +114,6 @@ img {
 
 #multimedia {
   background-color: #333; /* Blue */
-  padding: 30px;
-  padding-top: 30px;
-  padding-bottom: 70px;
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
@@ -193,9 +183,8 @@ nav {
 
     .tab {
       color: #333;
-      font-size: 2vw;
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
+      font-size: 1.5vw;
+      padding: 0.8rem  1rem;
       margin-right: 0.3rem;
       border-bottom: none;
       border-top-left-radius: 8px;
@@ -292,16 +281,6 @@ nav {
   height: 100%;
   border: 0;
   object-fit: contain; /* works for video, ignored for iframe */
-}
-
-.socialmedia-grid .responsive-video iframe,
-.socialmedia-grid .responsive-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
 }
 
 /* Lightbox styles */

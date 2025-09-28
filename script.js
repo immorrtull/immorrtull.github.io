@@ -164,3 +164,19 @@ function openLightbox(item) {
 
 // Populate grids on page load
 populateGrids();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const id = this.getAttribute('href').substring(1);
+    const target = document.getElementById(id);
+    const offset = 50; // adjust as needed
+
+    if (target) {
+      const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
