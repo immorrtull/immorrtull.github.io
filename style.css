@@ -8,7 +8,7 @@ html,body {
 }
 
 body {
-  font-family: "Lexend", Arial, Helvetica, sans-serif;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   font-variation-settings: "wght" 350;
   background-color: #FCFAF9;
   padding-top: 0;
@@ -37,15 +37,14 @@ img {
 /* === FONT STYLES === */
 
 h1 {
-  font-family: "Lexend", Arial, Helvetica, sans-serif;
-  font-variation-settings: "wght" 450;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 3.5vw, 2rem);
   padding-top: 0;
 }
 
 p {
   font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'EB Garamond', sans-serif;
   font-variation-settings: "wght" 350;
   max-width: 90%;
   height: auto;
@@ -53,11 +52,9 @@ p {
 
 sub {
   font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: "Lexend", Arial, Helvetica, sans-serif;
+  font-family: "Caveat", Arial, Helvetica, sans-serif;
   font-variation-settings: "wght" 450;
   height: auto;
-}
-
 }
 
 /* === YOUTUBE STYLES === */
@@ -143,7 +140,6 @@ nav {
 .nav-title a {
   font-size: clamp(0.5rem, 2vw, 2rem);
   color: #FCFAF9;
-  font-weight: bold;
   text-decoration: none;
   padding-left: 8vw; /* space from left edge */
 }
@@ -170,8 +166,7 @@ nav {
 .nav-links a {
   color: #FCFAF9;
   text-decoration: none;
-  font-size: clamp(0.5rem, 1.3vw, 2rem);
-  /* remove margin and padding to avoid weird spacing */
+  font-size: clamp(0.5rem, 1.3vw, 2rem); /* remove margin and padding to avoid weird spacing */
   margin: 0;
   padding: 0;
   text-align: center;
@@ -184,58 +179,59 @@ nav {
 
 /* === Filing Tabs === */
 
-    .tab-container {
-      display: flex;
-      position: relative;
-    }
+.tab-container {
+  display: flex;
+  position: relative;
+}
 
-    .tab {
-      color: #333;
-      font-size: 1.5vw;
-      padding: 0.8rem  1rem;
-      margin-right: 0.3rem;
-      border-bottom: none;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      background-color: #FCFAF9;
-      cursor: pointer;
-      position: relative;
-      top: 2px;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      transition: background 0.2s ease;
-    }
+.tab {
+  color: #333;
+  font-family: "Caveat", Courier, monospace;
+  font-size: 1.4vw;
+  padding: 0.8rem  1rem;
+  margin-right: 0.5rem;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #FCFAF9;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease;
+}
 
-    .tab:hover {
-      background-color: #333;
-      color: #FCFAF9;
-    }
+.tab:hover {
+  background-color: #333;
+  color: #FCFAF9;
+}
 
-    .tab.active {
-      background-color:#333;
-      color: #FCFAF9;
-      z-index: 2;
-    }
+.tab.active {
+  background-color:#333;
+  color: #FCFAF9;
+  z-index: 2;
+}
 
-    .tab-content {
-      padding: 3rem;
-      background-color: #333;
-      margin-top: -1px;
-    }
+.tab-content {
+  padding: 2rem;
+  background-color: #333;
+  margin-top: -1px;
+}
 
-    /* Hide all sections by default */
-    .work-section {
-      display: none;
-    }
+/* Hide all sections by default */
+.work-section {
+  display: none;
+}
 
-    .work-section.active {
-      display: block;
-    }
+.work-section.active {
+  display: block;
+}
 
-    .section-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
 
 /* Grid container for each section */
 
