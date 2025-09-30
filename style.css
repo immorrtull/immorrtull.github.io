@@ -45,12 +45,9 @@ img {
 
 #work {
   padding: 5vw 6vw 0vw 6vw;
-  font-family: "Lexend", sans-serif;
-  font-variation-settings: "wght" 350;
   background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
-  font-size: 24px;
 }
 
 .work-section {
@@ -69,10 +66,9 @@ img {
 
 .about-subtitle {
   font-size: clamp(0.5rem, 5vw, 2rem);
-  font-variation-settings: "wght" 450;
   color: #333;
   max-width: 90%;
-  height: owauto;
+  height: auto;
 }
 
 .about-body {
@@ -143,7 +139,7 @@ nav {
 
 .nav-title a {
   color: #FCFAF9;
-  font-size: 20px;
+  font-size: clamp(0.5rem, 5vw, 2rem);
   font-weight: bold;
   text-decoration: none;
   padding-left: 8vw; /* space from left edge */
@@ -151,7 +147,7 @@ nav {
 
 .nav-subtitle {
   color: #FCFAF9;
-  font-size: 12px;
+  font-size: clamp(0.5rem, 2vw, 2rem);
   font-weight: medium;
   text-decoration: none;
   padding-left: 8vw; /* space from left edge */
@@ -170,7 +166,7 @@ nav {
 .nav-links a {
   color: #FCFAF9;
   text-decoration: none;
-  font-size: 18px;
+  font-size: clamp(0.5rem, 2vw, 2rem);
   /* remove margin and padding to avoid weird spacing */
   margin: 0;
   padding: 0;
