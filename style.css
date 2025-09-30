@@ -8,7 +8,7 @@ html,body {
 }
 
 body {
-  font-family: "Dela Gothic One", Arial, Helvetica, sans-serif;
+  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
   background-color: #FCFAF9;
   padding-top: 0;
 }
@@ -36,23 +36,20 @@ img {
 /* === FONT STYLES === */
 
 h1 {
-  font-family: "Passion One", Arial, Helvetica, sans-serif;
+  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 3.5vw, 2rem);
   padding-top: 0;
 }
 
 p {
   font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: 'EB Garamond', sans-serif;
-  font-variation-settings: "wght" 350;
+  font-family: "Libre Caslon Text", Helvetica, sans-serif;
   max-width: 90%;
   height: auto;
 }
 
 sub {
-  font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: "Caveat", Arial, Helvetica, sans-serif;
-  font-variation-settings: "wght" 450;
+  font-family: Arial, Helvetica, sans-serif;
   height: auto;
 }
 
@@ -88,86 +85,104 @@ sub {
 }
 
 #documentary {
-  background-color: #333; /* Blue */
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
 }
 
 #scripted {
-  background-color: #333; /* Blue */
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
 }
 
 #socialmedia {
-  background-color: #333; /* Blue */
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
 }
 
 #podcasts {
-  background-color: #333; /* Blue */
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
 }
 
 #multimedia {
-  background-color: #333; /* Blue */
   color: #FCFAF9;
   text-align: left;
   font-size: 12px;
 }
 
 /* === NAVIGATION BAR === */
+
+.nav-outer {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #333; /* Adds a 2px solid black line at the bottom */
+  z-index: 1000;
+  width: 100vw;
+  padding-bottom: 5px;
+}
+
 nav {
   position: sticky;
   top: 0;
-  background-color: #333;
+  background-color: #ffffff;
+  border-bottom: 2px solid #333; /* Adds a 2px solid black line at the bottom */
   opacity: 97%;
   z-index: 1000;
   width: 100vw;
   padding: 20px 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
+.second-line {
+  margins: 0;
+  width: 100%; /* Makes the line span the full width */
+  height: 2px; /* Sets the thickness of the second line */
+  background-color: #333; /* Sets the color of the second line */
+}
+
+.nav-bottom {
+  display: flex;
+  justify-content: center;       /* center the whole group */
+  align-items: center;
+  gap: 30vw;                      /* creates the space between subtitle and nav links */
+  width: 100%;
+  padding: 0 8vw;
+  flex-wrap: wrap;               /* allows wrapping on small screens */
+}
+
+/* Title centered at top */
 .nav-title a {
-  font-size: clamp(0.5rem, 2vw, 2rem);
-  color: #FCFAF9;
+  font-size: clamp(0.5rem, 4vw, 15rem);
+  color: #333;
   text-decoration: none;
-  padding-left: 8vw; /* space from left edge */
-}
-
-.nav-subtitle {
-  color: #FCFAF9;
-  font-size: clamp(0.5rem, 1vw, 2rem);
-  font-weight: medium;
-  text-decoration: none;
-  padding-left: 8vw; /* space from left edge */
-  padding-top: .2vw;
+  text-align: center;
 }
 
 .nav-title a:hover {
   color: #04AA6D;
 }
 
+/* Nav links left aligned */
 .nav-links {
-  display: flex;  /* arrange links in a row */
-  gap: 40px;      /* space between links */
-  padding-right: 8vw; /* space from right edge */
+  display: flex;
+  gap: 2vw;
+  padding-right: 10vw;
 }
 
 .nav-links a {
-  color: #FCFAF9;
+  color: #333;
   text-decoration: none;
-  font-size: clamp(0.5rem, 1.3vw, 2rem); /* remove margin and padding to avoid weird spacing */
+  font-size: clamp(0.5rem, 1vw, 2rem);
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 .nav-links a:hover {
@@ -175,6 +190,15 @@ nav {
   border-radius: 4px;
 }
 
+/* Subtitle right aligned */
+.nav-subtitle {
+  color: #333;
+  font-size: clamp(0.5rem, 1vw, 3rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  padding-left: 10vw;
+
+}
 /* === Filing Tabs === */
 
 .tab-container {
@@ -184,105 +208,93 @@ nav {
 
 .tab {
   color: #333;
-  font-family: "Caveat", Courier, monospace;
-  font-size: 1.4vw;
-  padding: 0.8rem  1rem;
-  margin-right: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.5rem, 1vw, 2rem);
+  padding: 0.9rem  1rem;
+  margin-right: -.2rem;
   border-bottom: none;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-color: #FCFAF9;
+  border-top-left-radius: 10px;
+  border: 1px solid #333;
+  border-top-right-radius: 10px;
+  background-color: #dddbdb;
   cursor: pointer;
   position: relative;
-  top: 2px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  top: 0;
   transition: background 0.2s ease;
 }
 
 .tab:hover {
-  background-color: #333;
-  color: #FCFAF9;
+  background-color: #FCFAF9;
 }
 
 .tab.active {
-  background-color:#333;
-  color: #FCFAF9;
+  background-color:#FCFAF9;
+  border-bottom: 1px #FCFAF9;
+  color: #333;
   z-index: 2;
 }
 
 .tab-content {
   padding: 2rem;
-  background-color: #333;
+  background-color: #FCFAF9;
+  border: 1px solid #333;
   margin-top: -1px;
 }
 
-/* Hide all sections by default */
-.work-section {
-  display: none;
-}
-
-.work-section.active {
-  display: block;
-}
-
+/* === Section Visibility === */
 .section-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-/* Grid container for each section */
-
-/* Media inside grid item */
-.media {
-  display: block;
-}
-
-/* Grid item wrapper */
-
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* prevents overflow */
-  gap: 20px; /* or 6vw */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .grid-item {
   cursor: pointer;
 }
 
+/* Modern responsive video */
 .responsive-video {
-  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  position: relative;
 }
 
 .responsive-video iframe,
 .responsive-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }
 
-.socialmedia-grid .responsive-video {
-  position: relative;
-  width: 100%;
-  padding-top: 177.78%; /* 9:16 aspect ratio (portrait) */
-  overflow: hidden; /* to hide any overflow */
-}
-
-.socialmedia-grid .responsive-video iframe,
-.socialmedia-grid .responsive-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.responsive-video img {
   width: 100%;
   height: 100%;
-  border: 0;
-  object-fit: contain; /* works for video, ignored for iframe */
+  object-fit: cover;
+}
+
+.responsive-video iframe,
+.responsive-video video,
+.responsive-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Portrait videos (e.g. TikTok-style) */
+.socialmedia-grid .responsive-video {
+  aspect-ratio: 9 / 16;
+}
+
+.work-section {
+  display: none;
+}
+
+.work-section.active {
+  display: block;
 }
 
 /* Lightbox styles */
@@ -338,6 +350,8 @@ nav {
   padding: 60px 12.5vw; /* More vertical padding */
   background-color: #f96429;
   color: #FCFAF9;
+  border-top: 2px solid #333; /* Adds a 2px solid black line at the bottom */
+
 }
 
 .contact-text h1 {
@@ -375,5 +389,17 @@ nav {
 
   .contact-text {
     width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-grid {
+    grid-template-columns: 1fr;
   }
 }

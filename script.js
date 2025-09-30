@@ -1,21 +1,36 @@
 // Media items array
 const mediaItems = [
   { type: 'youtube', src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY', description: 'Documentary Video 1', section: 'documentary' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/qEefOJXaK1A?si=XdOVplP4ODCZhG-Z', description: 'Image 1', section: 'documentary' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', description: 'Image 1', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/qEefOJXaK1A?si=XdOVplP4ODCZhG-Z', description: 'Documentary Video 2', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', description: 'Documentary Video 3', section: 'documentary' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', description: 'Scripted Video 1', section: 'scripted' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', description: 'Image 2', section: 'scripted' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/jK5JKuz_g4c?si=Uuay9HNYGxjpkHMx', description: 'Social Media Video 1', section: 'scripted' },
-  { type: 'instagram', src: 'DOBn5qwkTr4', description: 'Image 3', section: 'socialmedia' },
-  { type: 'youtube', src: 'https://www.youtube.com/embed/Zgv74NOQFaY', description: 'Image 4', section: 'socialmedia' },
-  { type: 'instagram', src: 'DOg8xA6lPFi', description: 'Podcasts Video 1', section: 'socialmedia' },
-  { type: 'youtube', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', description: 'Graphic Design Video 1', section: 'podcasts' },
-  { type: 'youtube', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', description: 'Image 5', section: 'podcasts' },
-  { type: 'youtube', src: 'https://www.youtube.com/embed/mmyOswVxgng?si=Gm-dlDfovjvVYcNA', description: 'Image 5', section: 'podcasts' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'multimedia' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'multimedia' },
-  { type: 'image', src: 'images/Image-1.png', description: 'Image 5', section: 'graphicdesign' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', description: 'Scripted Video 2', section: 'scripted' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/jK5JKuz_g4c?si=Uuay9HNYGxjpkHMx', description: 'Scripted Video 3', section: 'scripted' },
+  { type: 'instagram', src: 'DOBn5qwkTr4', description: 'Instagram Post 1', section: 'socialmedia' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/Zgv74NOQFaY', description: 'Social Media Video 2', section: 'socialmedia', portrait: true },
+  { type: 'instagram', src: 'DOg8xA6lPFi', description: 'Instagram Post 2', section: 'socialmedia' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', description: 'Podcast Video 1', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', description: 'Podcast Video 2', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/mmyOswVxgng?si=Gm-dlDfovjvVYcNA', description: 'Podcast Video 3', section: 'podcasts' },
+  { type: 'image', src: 'images/Image-1.png', description: 'Multimedia Image 1', section: 'multimedia' },
+  { type: 'image', src: 'images/Image-1.png', description: 'Multimedia Image 2', section: 'multimedia' },
+  { type: 'image', src: 'images/Image-1.png', description: 'Graphic Design Image', section: 'graphicdesign' },
 ];
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Activate tab
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Show the corresponding section
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.work-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(target).classList.add('active');
+  });
+});
 
 // Lightbox elements
 const lightbox = document.getElementById('lightbox');
@@ -24,19 +39,19 @@ const lightboxDescription = document.getElementById('lightbox-description');
 const lightboxClose = document.getElementById('lightbox-close');
 
 // Close lightbox on close button click or outside click
-lightboxClose.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-  lightboxContent.innerHTML = '';  // Clear content
-});
-
+lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) {
-    lightbox.style.display = 'none';
-    lightboxContent.innerHTML = '';
+    closeLightbox();
   }
 });
 
-// Function to add media items to grids
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  lightboxContent.innerHTML = '';
+}
+
+// Populate media items
 function populateGrids() {
   mediaItems.forEach(item => {
     const wrapper = document.createElement('div');
@@ -44,7 +59,6 @@ function populateGrids() {
     wrapper.style.position = 'relative';
     wrapper.style.cursor = 'pointer';
 
-    // For video and iframe types, use a responsive wrapper
     let mediaElement;
 
     if (item.type === 'video') {
@@ -58,56 +72,71 @@ function populateGrids() {
       mediaElement.style.width = '100%';
       mediaElement.style.height = '100%';
 
-      const responsiveWrapper = document.createElement('div');
-      responsiveWrapper.classList.add('responsive-video');
-      responsiveWrapper.appendChild(mediaElement);
+      const responsiveWrapper = createResponsiveWrapper(mediaElement, item);
       wrapper.appendChild(responsiveWrapper);
 
     } else if (item.type === 'youtube' || item.type === 'streamable' || item.type === 'instagram') {
       mediaElement = document.createElement('iframe');
-
-      if (item.type === 'instagram') {
-        mediaElement.src = `https://www.instagram.com/p/${item.src}/embed`;
-      } else {
-        mediaElement.src = item.src;
-      }
+      mediaElement.src = item.type === 'instagram'
+        ? `https://www.instagram.com/p/${item.src}/embed`
+        : item.src;
       mediaElement.allowFullscreen = true;
       mediaElement.frameBorder = '0';
       mediaElement.allow = 'autoplay; encrypted-media';
       mediaElement.style.width = '100%';
       mediaElement.style.height = '100%';
 
-      const responsiveWrapper = document.createElement('div');
-      responsiveWrapper.classList.add('responsive-video');
-      responsiveWrapper.appendChild(mediaElement);
+      const responsiveWrapper = createResponsiveWrapper(mediaElement, item);
       wrapper.appendChild(responsiveWrapper);
 
-    } else if (item.type === 'image') {
-      mediaElement = document.createElement('img');
-      mediaElement.src = item.src;
-      mediaElement.alt = item.description || '';
-      mediaElement.style.width = '100%';
-      mediaElement.style.height = 'auto';
-      wrapper.appendChild(mediaElement);
-    }
+} else if (item.type === 'image') {
+  mediaElement = document.createElement('img');
+  mediaElement.src = item.src;
+  mediaElement.alt = item.description || '';
+  mediaElement.style.width = '100%';
+  mediaElement.style.height = '100%';
+  mediaElement.style.objectFit = 'cover';
 
-    // Add click event to open lightbox
+  const responsiveWrapper = document.createElement('div');
+  responsiveWrapper.classList.add('responsive-video'); // apply 16:9 aspect ratio
+  responsiveWrapper.appendChild(mediaElement);
+  wrapper.appendChild(responsiveWrapper);
+}
+
+    // Lightbox click
     wrapper.addEventListener('click', () => openLightbox(item));
 
-    // Append to the respective section grid
+    // Add to correct section
     const sectionGrid = document.querySelector(`.${item.section}-grid`);
     if (sectionGrid) {
       sectionGrid.appendChild(wrapper);
     } else {
-      console.warn(`Grid container for section "${item.section}" not found!`);
+      console.warn(`Grid container for section "${item.section}" not found.`);
     }
   });
 }
 
-// Function to open the lightbox with selected item
+// Create responsive wrapper div, optionally adding portrait class
+function createResponsiveWrapper(mediaElement, item) {
+  const responsiveWrapper = document.createElement('div');
+  responsiveWrapper.classList.add('responsive-video');
+
+  // Apply portrait class if necessary
+  if (
+    item.section === 'socialmedia' ||
+    item.type === 'instagram' ||
+    item.portrait === true
+  ) {
+    responsiveWrapper.classList.add('portrait');
+  }
+
+  responsiveWrapper.appendChild(mediaElement);
+  return responsiveWrapper;
+}
+
+// Open lightbox
 function openLightbox(item) {
   lightboxContent.innerHTML = '';
-
   let mediaElement;
 
   if (item.type === 'video') {
@@ -118,36 +147,22 @@ function openLightbox(item) {
     mediaElement.style.width = '100%';
     mediaElement.style.height = '100%';
 
-    const responsiveWrapper = document.createElement('div');
-    responsiveWrapper.classList.add('responsive-video');
-    responsiveWrapper.appendChild(mediaElement);
-    lightboxContent.appendChild(responsiveWrapper);
+    const wrapper = createResponsiveWrapper(mediaElement, item);
+    lightboxContent.appendChild(wrapper);
 
-  } else if (item.type === 'youtube') {
+  } else if (item.type === 'youtube' || item.type === 'instagram') {
     mediaElement = document.createElement('iframe');
-    mediaElement.src = item.src;
-    mediaElement.frameBorder = '0';
+    mediaElement.src = item.type === 'instagram'
+      ? `https://www.instagram.com/p/${item.src}/embed`
+      : item.src;
     mediaElement.allow = 'autoplay; encrypted-media';
     mediaElement.allowFullscreen = true;
-    mediaElement.style.width = '100%';
-    mediaElement.style.height = '100%';
-
-    const responsiveWrapper = document.createElement('div');
-    responsiveWrapper.classList.add('responsive-video');
-    responsiveWrapper.appendChild(mediaElement);
-    lightboxContent.appendChild(responsiveWrapper);
-
-  } else if (item.type === 'instagram') {
-    mediaElement = document.createElement('iframe');
-    mediaElement.src = `https://www.instagram.com/p/${item.src}/embed`;
     mediaElement.frameBorder = '0';
     mediaElement.style.width = '100%';
     mediaElement.style.height = '100%';
 
-    const responsiveWrapper = document.createElement('div');
-    responsiveWrapper.classList.add('responsive-video');
-    responsiveWrapper.appendChild(mediaElement);
-    lightboxContent.appendChild(responsiveWrapper);
+    const wrapper = createResponsiveWrapper(mediaElement, item);
+    lightboxContent.appendChild(wrapper);
 
   } else if (item.type === 'image') {
     mediaElement = document.createElement('img');
@@ -162,9 +177,7 @@ function openLightbox(item) {
   lightbox.style.display = 'flex';
 }
 
-// Populate grids on page load
-populateGrids();
-
+// Smooth scrolling for in-page anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -175,8 +188,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     if (target) {
       const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   });
 });
+
+// Initialize
+populateGrids();

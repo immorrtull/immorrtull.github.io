@@ -15,13 +15,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Amarante&family=Asset&family=Belanosima:wght@400;600;700&family=Dela+Gothic+One&family=Gloock&family=Jomhuria&family=Marko+One&family=Notable&family=Passion+One:wght@400;700;900&family=Poller+One&family=Prosto+One&family=Rammetto+One&family=Savate:ital,wght@0,200..900;1,200..900&family=Yusei+Magic&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  <div class="nav-outer">
+    <nav>
     <div class="nav-title">
       <a href="#main">MORRISON TULLOCH</a>
     </div>
     <div class="nav-bottom">
       <div class="nav-subtitle">
-        Digital Editor & Producer
+       DIGITAL EDITOR & PRODUCER
       </div>
       <div class="nav-links">
         <a href="#work">WORK</a> <!-- Link to Work section -->
@@ -30,7 +31,8 @@
       </div>
     </div>
   </nav>
-    
+  </div>
+
    <div id="main">
       <div class="container">
         <div style="position:relative; width:100%; height:0px; padding-bottom:50.000%"><iframe
@@ -44,62 +46,61 @@
   </div>
 
  <!-- Work Section -->
-  <div id="work">
-    <div class="container">
-      <div class="work-content">
-        <h1>Work Samples</h1>
-          <div class="tab-container">
-            <div class="tab active" data-tab="documentary">Documentary</div>
-            <div class="tab" data-tab="scripted">Scripted</div>
-            <div class="tab" data-tab="socialmedia">Social Media</div>
-            <div class="tab" data-tab="podcasts">Podcasts</div>
-            <div class="tab" data-tab="multimedia">Multimedia Projects</div>
+ <div id="work">
+  <div class="container">
+    <div class="work-content">
+      <h1>WORK</h1>
+
+      <!-- Tabs -->
+      <div class="tab-container">
+        <div class="tab active" data-tab="documentary"><em>DOCUMENTARY</em></div>
+        <div class="tab" data-tab="scripted"><em>SCRIPTED</em></div>
+        <div class="tab" data-tab="socialmedia"><em>SOCIAL MEDIA</em></div>
+        <div class="tab" data-tab="podcasts"><em>PODCASTS</em></div>
+        <div class="tab" data-tab="multimedia"><em>MULTIMEDIA</em></div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div class="container">
+
+          <!-- Documentary Section -->
+          <div id="documentary" class="work-section active">
+            <div class="documentary-grid section-grid"></div>
           </div>
+
+          <!-- Scripted Section -->
+          <div id="scripted" class="work-section">
+            <div class="scripted-grid section-grid"></div>
+          </div>
+
+          <!-- Social Media Section -->
+          <div id="socialmedia" class="work-section">
+            <div class="socialmedia-grid section-grid"></div>
+          </div>
+
+          <!-- Podcasts Section -->
+          <div id="podcasts" class="work-section">
+            <div class="podcasts-grid section-grid"></div>
+          </div>
+
+          <!-- Multimedia Section -->
+          <div id="multimedia" class="work-section">
+            <div class="multimedia-grid section-grid"></div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Tab Content Sections -->
-
-  <div class="tab-content">
-    <div class="container">
-
-    <!-- Documentary -->
-
-    <div id="documentary" class="work-section active">
-      <div class="documentary-grid section-grid"></div>
-    </div>
-
-    <!-- Scripted -->
-    <div id="scripted" class="work-section">
-      <div class="scripted-grid section-grid"></div>
-    </div>
-
-    <!-- Social Media -->
-    <div id="socialmedia" class="work-section">
-      <div class="socialmedia-grid section-grid"></div>
-    </div>
-
-    <!-- Podcasts -->
-    <div id="podcasts" class="work-section">
-      <div class="podcasts-grid section-grid"></div>
-    </div>
-
-    <!-- Multimedia Projects -->
-    <div id="multimedia" class="work-section">
-      <div class="multimedia-grid section-grid"></div>
-    </div>
-
-  </div>
-  </div>
-
-  <!-- Lightbox (optional - unchanged) -->
-  <div id="lightbox" style="display: none;">
-    <div id="lightbox-content">
-      <button id="lightbox-close">&times;</button>
-      <div id="lightbox-description"></div>
-    </div>
-  </div>
+<!-- Lightbox (for modal viewing) -->
+<div id="lightbox" style="display: none;">
+  <div id="lightbox-content"></div>
+  <p id="lightbox-description"></p>
+  <span id="lightbox-close">&times;</span>
+</div>
 
   <script>
     const tabs = document.querySelectorAll('.tab');
@@ -127,9 +128,8 @@
 <!-- Bio Section -->
     <div id="About">
       <div class="container">
-        <h1>Morrison Tulloch | Digital Editor & Producer</h1>
+        <sub>I WAS RAISED ACROSS SIX CITIES — DENVER, BEIJING, YOKOHAMA, KOBE, WASHINGTON D.C. & KATHMANDU.</sub>
         <img src="images/ProfilePhoto-Morrison.webp"   style="max-width: 65%; height: auto; display: block;" alt="My Image">
-        <sub>I was raised across six cities — Denver, Beijing, Yokohama, Kobe, Washington D.C., and Kathmandu.</sub>
         <p>Growing up transiently, I found that exchanging stories helped me forge cross-cultural connections and understanding. This led me to study Post-Production at the Colorado Film School and pursue a Bachelor of Media Studies at the University of British Columbia, 
           where I'm now in my final year. As the Video Production Assistant at Vancouver's Beaty Biodiversity Museum, I've spent three years producing & editing engaging digital content — from social media to the <em>Researcher's Revealed</em> Documentary Series.</p>
 
@@ -140,10 +140,10 @@
 <div id="contact">
   <div class="contact-content">
     <div class="contact-text">
-      <h1>Contact</h1>
-      <p><strong>Email:</strong></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/morrison-tulloch-co" target="_blank">www.linkedin.com/in/morrison-tulloch-co</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/thingsmomomakes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@thingsmomomakes</a></p>
+      <h1>CONTACT</h1>
+      <sub>EMAIL:</sub>
+      <sub>LINKEDIN:<a href="https://www.linkedin.com/in/morrison-tulloch-co" target="_blank">www.linkedin.com/in/morrison-tulloch-co</a></sub>
+      <sub>INSTAGRAM:<a href="https://www.instagram.com/thingsmomomakes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@thingsmomomakes</a></sub>
     </div>
     <img src="images/14750934775_1b57dbedd5_o.webp" alt="Contact Image" />
   </div>
