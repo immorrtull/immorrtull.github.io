@@ -8,8 +8,7 @@ html,body {
 }
 
 body {
-  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
-  font-variation-settings: "wght" 350;
+  font-family: "Dela Gothic One", Arial, Helvetica, sans-serif;
   background-color: #FCFAF9;
   padding-top: 0;
 }
@@ -37,7 +36,7 @@ img {
 /* === FONT STYLES === */
 
 h1 {
-  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-family: "Passion One", Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 3.5vw, 2rem);
   padding-top: 0;
 }
@@ -133,7 +132,6 @@ nav {
   width: 100vw;
   padding: 20px 0;
   display: flex;
-  justify-content: space-between; /* Push title left, links right */
   align-items: center;
 }
 
