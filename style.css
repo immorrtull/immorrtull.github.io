@@ -49,7 +49,7 @@ p {
 }
 
 sub {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
   height: auto;
 }
 
@@ -155,7 +155,7 @@ nav {
   color: #333;
   text-decoration: none;
   font-size: clamp(0.5rem, 1vw, 2rem);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -169,8 +169,7 @@ nav {
 .nav-subtitle {
   color: #333;
   font-size: clamp(0.5rem, 1vw, 3rem);
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
   padding-left: 10vw;
 
 }
@@ -183,7 +182,7 @@ nav {
 
 .tab {
   color: #333;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 1vw, 2rem);
   padding: 0.9rem  1rem;
   margin-right: -.2rem;
@@ -319,14 +318,14 @@ nav {
 }
 
 #lightbox-close:hover {
-  color: #04AA6D;
+  color: #1f9168;
 }
 
 /* Stork */
 
 #contact {
   padding: 60px 12.5vw; /* More vertical padding */
-  background-color: #f96429;
+  background-color: #df5a25;
   color: #FCFAF9;
   border-top: 2px solid #333; /* Adds a 2px solid black line at the bottom */
 
