@@ -1,17 +1,14 @@
 /* === GLOBAL STYLES === */
-
-html,body {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color:  #FCFAF9;
 }
 
 img {
   max-width: 100%;
-  max-height: 100vh;
-  width: auto;
-  height: auto;
   display: block;
   object-fit: contain;
 }
@@ -22,71 +19,86 @@ img {
   width: 100%;
   text-align: center;
   display: flex;
-  flex-direction: column; /* Optional: arrange children vertically */
-  align-items: center;
-  box-sizing: border-box; /* Ensure padding doesn’t break layout */
+  flex-direction: column;
 }
 
 /* === FONT STYLES === */
-
 h1 {
   font-family: "Vidaloka", Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 3.5vw, 2rem);
-  padding-top: 0;
-  font-weight: 400; /* normalize */
-
+  font-weight: 400;
+  margin-top: 0;
 }
 
 p {
   font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: 'Alegreya Sans'; Helvetica, sans-serif;
-  max-width: 90%;
-  height: auto;
+  font-family: 'Alegreya Sans', Helvetica, sans-serif;
+  line-height: 1.6; 
 }
 
 sub {
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  height: auto;
+  font-size: clamp(0.5rem, 1.3vw, 2rem);
+  padding-bottom: 1.5rem;
 }
 
-/* === YOUTUBE STYLES === */
+/* === SECTIONS === */
+#main {
+  padding: 5vw 12vw;
+  background-color: #FCFAF9;
+  color: #FCFAF9;
+  text-align: center;
+  font-size: 24px;
+}
 
 #work {
-  padding: 5vw 6vw 5vw 6vw;
+  padding: 9vw 6vw 5vw 6vw;
   background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
 }
 
+.WorkTitle {
+  padding-bottom: 2vw;
+}
+
+.work-spacer {
+  padding-top: 5vw;
+}
+
 .work-section {
+  display: none;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 15px 20px;
-  box-sizing: border-box;
+}
+
+.work-section.active {
+  display: block;
 }
 
 #About {
   padding: 5vw 10vw;
   background-color: #FCFAF9;
   color: #333;
+  max-width: 900px;       /* constrain width */
+  margin: 0 auto;         /* center horizontally */
+  text-align: center;     /* center text */
 }
 
-#main {
-  padding: 5vw 12vw;
-  background-color: #FCFAF9; /* Orange */
-  color: #FCFAF9;
-  text-align: center;
-  font-size: 24px;
+#About img {
+  display: block;        /* remove inline behavior */
+  max-width: 80%;       /* scale down if needed */
+  height: auto;          /* keep aspect ratio */
+  margin: 0 auto;        /* center horizontally */
+  object-fit: contain;   /* prevent cropping */
 }
 
 #documentary, #scripted, #socialmedia, #podcasts, #multimedia {
-  color: #FCFAF9;
-  text-align: left;
   font-size: 12px;
+  text-align: left;
+  color: #FCFAF9;
 }
-
-/* === NAVIGATION BAR === */
 
 /* === NAVIGATION BAR === */
 .nav-outer {
@@ -96,70 +108,52 @@ sub {
   width: 100%;
 }
 
-/* White section of the bar (with first line) */
 .nav-inner {
   background-color: #fff;
   opacity: 97%;
-  border-bottom: 2px solid #333; /* first line */
-  padding: 20px ;
+  border-bottom: 2px solid #333;
+  padding: 20px;
 }
 
-/* Flex container: left (title+subtitle) + right (links) */
 .nav-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;   /* keeps content contained */
-  margin: 0 auto;      /* centers content */
-  padding: 0 1rem;     /* controlled inner padding */
-  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Left side: title + subtitle inline */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-/* Title */
 .nav-title a {
   font-size: clamp(1rem, 3vw, 2rem);
   color: #333;
   text-decoration: none;
-  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
-  font-weight: 400; /* normalize */
 }
 
-.nav-title a:hover {
+.nav-title a:hover,
+.nav-links a:hover {
   color: #04AA6D;
 }
 
-/* Subtitle */
-.nav-subtitle {
-  color: #333;
-  font-size: clamp(0.8rem, 1vw, 1.2rem);
+.nav-subtitle,
+.nav-links a {
+  font-size: clamp(0.5rem, 1.1vw, 2rem);
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
+  color: #333;
+  text-decoration: none;
 }
 
-/* Right side: nav links */
 .nav-links {
   display: flex;
   gap: 2rem;
 }
 
-.nav-links a {
-  color: #333;
-  text-decoration: none;
-  font-size: clamp(0.8rem, 1vw, 1.2rem);
-  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-}
-
-.nav-links a:hover {
-  color: #04AA6D;
-}
-
-/* Second line (sticks, no background) */
 .nav-divider {
   width: 100%;
   height: 1.5px;
@@ -167,37 +161,32 @@ sub {
   margin: 3.5px 0;
 }
 
-/* === Filing Tabs === */
-
+/* === Tabs === */
 .tab-container {
   display: flex;
   position: relative;
 }
 
 .tab {
-  color: #333;
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.5rem, 1vw, 2rem);
-  padding: 0.9rem  1rem;
+  font-size: clamp(0.5rem, 1.1vw, 2rem);
+  padding: 0.9rem 1rem;
   margin-right: -.2rem;
-  border-bottom: none;
-  border-top-left-radius: 10px;
   border: 1px solid #333;
-  border-top-right-radius: 10px;
+  border-radius: 10px 10px 0 0;
   background-color: #dddbdb;
+  color: #333;
   cursor: pointer;
-  position: relative;
-  top: 0;
   transition: 0.3s ease;
 }
 
-.tab:hover {
+.tab:hover,
+.tab.active {
   background-color: #FCFAF9;
 }
 
 .tab.active {
-  background-color:#FCFAF9;
-  border-bottom: 1px #FCFAF9;
+  border-bottom: 1px solid #FCFAF9;
   color: #333;
   z-index: 2;
 }
@@ -207,70 +196,118 @@ sub {
   background-color: #FCFAF9;
   border: 1px solid #333;
   margin-top: -1px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
+  border-radius: 0 0 10px 10px;
+  width: 100%;           /* fill parent container */
+  max-width: 1500px;     /* optional, matches .work-section */
+  box-sizing: border-box; 
 }
 
-/* === Section Visibility === */
+/* === GRID SECTIONS === */
+
+/* Title and subtitle under each media item */
+.grid-item .media-text {
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.grid-item .media-title {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: clamp(0.7rem, 1.5vw, 1.2rem);
+  margin: 0;
+  color: #333;
+}
+
+.grid-item .media-subtitle {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: clamp(0.5rem, 1.1vw, 1rem);
+  margin: 0;
+  color: #333;
+}
+
 .section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  width: 100%; /* add this */
 }
 
 .grid-item {
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Modern responsive video */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: auto; /* let rows adjust to content */
+}
+
+.grid-item .responsive-video.portrait {
+  width: 100%;        /* fill grid column width */
+  height: auto;       /* height scales with aspect ratio */
+  max-height: 500px;  /* optional: prevents extreme tall videos */
+  position: relative; /* ensures absolute child stays inside */
+}
+
+/* Iframes inside portrait wrapper */
+.grid-item .responsive-video.portrait iframe {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important; /* prevent spilling out */
+  object-fit: contain;
+}
+
+/* === VIDEO / MEDIA STYLES === */
 .responsive-video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
   position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
 }
 
-.responsive-video iframe,
-.responsive-video video {
-  width: 100%;
-  height: 100%;
-  border: none;
-  object-fit: cover;
+.responsive-video:not(.portrait) {
+  aspect-ratio: 16 / 9;
 }
 
-.responsive-video img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.responsive-video.portrait {
+  aspect-ratio: 9 / 16; /* vertical videos */
+  position: relative;    /* keep relative for non-absolute children */
+  height: auto;          /* allow natural height */
 }
 
 .responsive-video iframe,
 .responsive-video video,
 .responsive-video img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  border: none;
+  display: block;
   object-fit: cover;
-  display: block;
 }
 
-
-/* Portrait videos (e.g. TikTok-style) */
-.socialmedia-grid .responsive-video {
-  aspect-ratio: 9 / 16;
+.responsive-video.portrait iframe,
+.responsive-video.portrait video {
+  position: relative; /* remove absolute */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.work-section {
-  display: none;
+.responsive-video.portrait iframe,
+.responsive-video.portrait video,
+.responsive-video.portrait img {
+  object-fit: contain;
+  background: #000;
 }
 
-.work-section.active {
-  display: block;
-}
-
-/* Lightbox styles */
+/* === LIGHTBOX === */
 #lightbox {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%;
@@ -289,9 +326,12 @@ sub {
 }
 
 #lightbox-content video,
-#lightbox-content img {
+#lightbox-content img,
+#lightbox-content iframe {
   max-width: 100%;
   max-height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 #lightbox-description {
@@ -311,28 +351,24 @@ sub {
   cursor: pointer;
 }
 
-#lightbox-close:hover {
-  color: #1f9168;
-}
-
-/* Stork */
-
+/* === CONTACT === */
 #contact {
-  padding: 60px 12.5vw; /* More vertical padding */
+  padding: 8vw 12.5vw;
   background-color: #df5a25;
   color: #FCFAF9;
-  border-top: 2px solid #333; /* Adds a 2px solid black line at the bottom */
-
+  border-top: 2px solid #333;
 }
 
-.contact-text h1 {
-  margin-top: 0;
+.contact-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-content {
   display: flex;
-  align-items: center; /* vertical center */
-  justify-content: space-between; /* push image left, text right */
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   gap: 20px;
   flex-wrap: wrap;
@@ -344,7 +380,14 @@ sub {
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
-  display: block; /* remove inline-block gaps */
+  display: block;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 900px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -360,6 +403,7 @@ sub {
 
   .contact-text {
     width: 100%;
+    min-width: 0;
   }
 }
 
@@ -372,5 +416,12 @@ sub {
 @media (max-width: 600px) {
   .section-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Optional: adjust for smaller screens */
+@media (max-width: 900px) {
+  .grid-item.portrait {
+    grid-row: span 1; /* let them behave like normal items on smaller screens */
   }
 }

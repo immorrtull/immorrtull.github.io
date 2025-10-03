@@ -1,8 +1,7 @@
-// Media items array
 const mediaItems = [
-  { type: 'youtube', src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY', description: 'Documentary Video 1', section: 'documentary' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/qEefOJXaK1A?si=XdOVplP4ODCZhG-Z', description: 'Documentary Video 2', section: 'documentary' },
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', description: 'Documentary Video 3', section: 'documentary' },
+  { type: 'youtube', title: 'Urban Tree Insect Communities', subtitle: "Researcher's Revealed Series, Beaty Biodiversity Museum (2024)", src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/qEefOJXaK1A?si=XdOVplP4ODCZhG-Z', title: "Nch'kay Garibaldi Alpine Research", subtitle: "Researcher's Revealed Series, Beaty Biodiversity Museum (2024)", section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', title: "Machine Learning and Social Behaviour", subtitle: "Researcher's Revealed Series, Beaty Biodiversity Museum (2024)", section: 'documentary' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', description: 'Scripted Video 1', section: 'scripted' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', description: 'Scripted Video 2', section: 'scripted' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/jK5JKuz_g4c?si=Uuay9HNYGxjpkHMx', description: 'Scripted Video 3', section: 'scripted' },
@@ -12,51 +11,49 @@ const mediaItems = [
   { type: 'youtube', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', description: 'Podcast Video 1', section: 'podcasts' },
   { type: 'youtube', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', description: 'Podcast Video 2', section: 'podcasts' },
   { type: 'youtube', src: 'https://www.youtube.com/embed/mmyOswVxgng?si=Gm-dlDfovjvVYcNA', description: 'Podcast Video 3', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', description: 'Podcast Video 1', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', description: 'Podcast Video 2', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/mmyOswVxgng?si=Gm-dlDfovjvVYcNA', description: 'Podcast Video 3', section: 'podcasts' },
   { type: 'image', src: 'images/Image-1.png', description: 'Multimedia Image 1', section: 'multimedia' },
   { type: 'image', src: 'images/Image-1.png', description: 'Multimedia Image 2', section: 'multimedia' },
   { type: 'image', src: 'images/Image-1.png', description: 'Graphic Design Image', section: 'graphicdesign' },
 ];
 
+// Tabs
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
-    // Activate tab
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-
-    // Show the corresponding section
     const target = tab.dataset.tab;
-    document.querySelectorAll('.work-section').forEach(section => {
-      section.classList.remove('active');
-    });
+    document.querySelectorAll('.work-section').forEach(section => section.classList.remove('active'));
     document.getElementById(target).classList.add('active');
   });
 });
 
-// Lightbox elements
+// Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxContent = document.getElementById('lightbox-content');
 const lightboxDescription = document.getElementById('lightbox-description');
 const lightboxClose = document.getElementById('lightbox-close');
 
-// Close lightbox on close button click or outside click
 lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+function closeLightbox() { lightbox.style.display = 'none'; lightboxContent.innerHTML = ''; }
 
-function closeLightbox() {
-  lightbox.style.display = 'none';
-  lightboxContent.innerHTML = '';
+// Responsive wrapper
+function createResponsiveWrapper(mediaElement, item) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('responsive-video');
+  if (item.section === 'socialmedia' || item.type === 'instagram' || item.portrait) wrapper.classList.add('portrait');
+  wrapper.appendChild(mediaElement);
+  return wrapper;
 }
 
-// Populate media items
+// Populate grid
 function populateGrids() {
   mediaItems.forEach(item => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('grid-item');
-    wrapper.style.position = 'relative';
     wrapper.style.cursor = 'pointer';
 
     let mediaElement;
@@ -66,72 +63,53 @@ function populateGrids() {
       mediaElement.src = item.src;
       mediaElement.muted = true;
       mediaElement.autoplay = true;
-      mediaElement.playsInline = true;
       mediaElement.loop = true;
+      mediaElement.playsInline = true;
       mediaElement.preload = 'auto';
-      mediaElement.style.width = '100%';
-      mediaElement.style.height = '100%';
-
-      const responsiveWrapper = createResponsiveWrapper(mediaElement, item);
-      wrapper.appendChild(responsiveWrapper);
-
-    } else if (item.type === 'youtube' || item.type === 'streamable' || item.type === 'instagram') {
+    } else if (item.type === 'youtube' || item.type === 'instagram') {
       mediaElement = document.createElement('iframe');
       mediaElement.src = item.type === 'instagram'
-        ? `https://www.instagram.com/p/${item.src}/embed`
+        ? `https://www.instagram.com/p/${item.src}/embed/captioned/`
         : item.src;
       mediaElement.allowFullscreen = true;
+      mediaElement.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
       mediaElement.frameBorder = '0';
-      mediaElement.allow = 'autoplay; encrypted-media';
-      mediaElement.style.width = '100%';
-      mediaElement.style.height = '100%';
-
-      const responsiveWrapper = createResponsiveWrapper(mediaElement, item);
-      wrapper.appendChild(responsiveWrapper);
-
-} else if (item.type === 'image') {
-  mediaElement = document.createElement('img');
-  mediaElement.src = item.src;
-  mediaElement.alt = item.description || '';
-  mediaElement.style.width = '100%';
-  mediaElement.style.height = '100%';
-  mediaElement.style.objectFit = 'cover';
-
-  const responsiveWrapper = document.createElement('div');
-  responsiveWrapper.classList.add('responsive-video'); // apply 16:9 aspect ratio
-  responsiveWrapper.appendChild(mediaElement);
-  wrapper.appendChild(responsiveWrapper);
-}
-
-    // Lightbox click
-    wrapper.addEventListener('click', () => openLightbox(item));
-
-    // Add to correct section
-    const sectionGrid = document.querySelector(`.${item.section}-grid`);
-    if (sectionGrid) {
-      sectionGrid.appendChild(wrapper);
-    } else {
-      console.warn(`Grid container for section "${item.section}" not found.`);
+    } else if (item.type === 'image') {
+      mediaElement = document.createElement('img');
+      mediaElement.src = item.src;
+      mediaElement.alt = item.description || '';
     }
-  });
+
+    const responsiveWrapper = createResponsiveWrapper(mediaElement, item);
+    wrapper.appendChild(responsiveWrapper);
+
+    // Add title and subtitle below media
+    const textWrapper = document.createElement('div');
+textWrapper.classList.add('media-text');
+
+// Title
+if (item.title) {
+  const title = document.createElement('h2');
+  title.textContent = item.title;
+  title.classList.add('media-title');
+  textWrapper.appendChild(title);
 }
 
-// Create responsive wrapper div, optionally adding portrait class
-function createResponsiveWrapper(mediaElement, item) {
-  const responsiveWrapper = document.createElement('div');
-  responsiveWrapper.classList.add('responsive-video');
+// Subtitle
+if (item.subtitle) {
+  const subtitle = document.createElement('p');
+  subtitle.textContent = item.subtitle;
+  subtitle.classList.add('media-subtitle');
+  textWrapper.appendChild(subtitle);
+}
 
-  // Apply portrait class if necessary
-  if (
-    item.section === 'socialmedia' ||
-    item.type === 'instagram' ||
-    item.portrait === true
-  ) {
-    responsiveWrapper.classList.add('portrait');
-  }
+wrapper.appendChild(textWrapper);
 
-  responsiveWrapper.appendChild(mediaElement);
-  return responsiveWrapper;
+wrapper.addEventListener('click', () => openLightbox(item));
+
+    const sectionGrid = document.querySelector(`.${item.section}-grid`);
+    if (sectionGrid) sectionGrid.appendChild(wrapper);
+  });
 }
 
 // Open lightbox
@@ -139,59 +117,25 @@ function openLightbox(item) {
   lightboxContent.innerHTML = '';
   let mediaElement;
 
-  if (item.type === 'video') {
-    mediaElement = document.createElement('video');
-    mediaElement.src = item.src;
-    mediaElement.controls = true;
-    mediaElement.autoplay = true;
-    mediaElement.style.width = '100%';
-    mediaElement.style.height = '100%';
-
-    const wrapper = createResponsiveWrapper(mediaElement, item);
-    lightboxContent.appendChild(wrapper);
-
-  } else if (item.type === 'youtube' || item.type === 'instagram') {
+  if (item.type === 'youtube' || item.type === 'instagram') {
     mediaElement = document.createElement('iframe');
     mediaElement.src = item.type === 'instagram'
-      ? `https://www.instagram.com/p/${item.src}/embed`
-      : item.src;
-    mediaElement.allow = 'autoplay; encrypted-media';
+      ? `https://www.instagram.com/p/${item.src}/embed/captioned/`
+      : item.src + '?autoplay=1'; // autoplay for YouTube
     mediaElement.allowFullscreen = true;
+    mediaElement.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
     mediaElement.frameBorder = '0';
-    mediaElement.style.width = '100%';
-    mediaElement.style.height = '100%';
-
-    const wrapper = createResponsiveWrapper(mediaElement, item);
-    lightboxContent.appendChild(wrapper);
-
+    lightboxContent.appendChild(createResponsiveWrapper(mediaElement, item));
   } else if (item.type === 'image') {
     mediaElement = document.createElement('img');
     mediaElement.src = item.src;
     mediaElement.alt = item.description || '';
-    mediaElement.style.width = '100%';
-    mediaElement.style.height = 'auto';
     lightboxContent.appendChild(mediaElement);
   }
 
   lightboxDescription.textContent = item.description || 'No description available';
   lightbox.style.display = 'flex';
 }
-
-// Smooth scrolling for in-page anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const id = this.getAttribute('href').substring(1);
-    const target = document.getElementById(id);
-    const offset = 50; // adjust as needed
-
-    if (target) {
-      const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  });
-});
 
 // Initialize
 populateGrids();
