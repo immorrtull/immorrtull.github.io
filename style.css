@@ -7,12 +7,6 @@ html,body {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
-  background-color: #FCFAF9;
-  padding-top: 0;
-}
-
 img {
   max-width: 100%;
   max-height: 100vh;
@@ -39,11 +33,13 @@ h1 {
   font-family: "Vidaloka", Arial, Helvetica, sans-serif;
   font-size: clamp(0.5rem, 3.5vw, 2rem);
   padding-top: 0;
+  font-weight: 400; /* normalize */
+
 }
 
 p {
   font-size: clamp(0.5rem, 1.3vw, 2rem);
-  font-family: "Libre Caslon Text", Helvetica, sans-serif;
+  font-family: 'Alegreya Sans'; Helvetica, sans-serif;
   max-width: 90%;
   height: auto;
 }
@@ -92,87 +88,85 @@ sub {
 
 /* === NAVIGATION BAR === */
 
+/* === NAVIGATION BAR === */
 .nav-outer {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #333; /* Adds a 2px solid black line at the bottom */
   z-index: 1000;
   width: 100%;
-  padding-bottom: 5px;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-  border-bottom: 2px solid #333; /* Adds a 2px solid black line at the bottom */
+/* White section of the bar (with first line) */
+.nav-inner {
+  background-color: #fff;
   opacity: 97%;
-  z-index: 1000;
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  border-bottom: 2px solid #333; /* first line */
+  padding: 20px ;
 }
 
-.second-line {
-  margin: 0;
-  width: 100%; /* Makes the line span the full width */
-  height: 2px; /* Sets the thickness of the second line */
-  background-color: #333; /* Sets the color of the second line */
-}
-
+/* Flex container: left (title+subtitle) + right (links) */
 .nav-bottom {
   display: flex;
-  justify-content: center;       /* center the whole group */
+  justify-content: space-between;
   align-items: center;
-  gap: 15rem;                      /* creates the space between subtitle and nav links */
-  width: 100%;
-  flex-wrap: wrap;               /* allows wrapping on small screens */
+  max-width: 1200px;   /* keeps content contained */
+  margin: 0 auto;      /* centers content */
+  padding: 0 1rem;     /* controlled inner padding */
+  box-sizing: border-box;
 }
 
-/* Title centered at top */
+/* Left side: title + subtitle inline */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Title */
 .nav-title a {
-  font-size: clamp(0.5rem, 4vw, 15rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   color: #333;
   text-decoration: none;
-  text-align: center;
+  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
+  font-weight: 400; /* normalize */
 }
 
 .nav-title a:hover {
   color: #04AA6D;
 }
 
-/* Nav links left aligned */
+/* Subtitle */
+.nav-subtitle {
+  color: #333;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
+}
+
+/* Right side: nav links */
 .nav-links {
   display: flex;
-  gap: 2vw;
-  padding-right: 10vw;
+  gap: 2rem;
 }
 
 .nav-links a {
   color: #333;
   text-decoration: none;
-  font-size: clamp(0.5rem, 1vw, 2rem);
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a:hover {
   color: #04AA6D;
-  border-radius: 4px;
 }
 
-/* Subtitle right aligned */
-.nav-subtitle {
-  color: #333;
-  font-size: clamp(0.5rem, 1vw, 3rem);
-  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  padding-left: 10vw;
-
+/* Second line (sticks, no background) */
+.nav-divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: #333;
+  margin: 3.5px 0;
 }
+
 /* === Filing Tabs === */
 
 .tab-container {
