@@ -5,6 +5,9 @@ html, body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color:  #FCFAF9;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* prevents side-scrolling */
 }
 
 img {
@@ -15,6 +18,8 @@ img {
 
 .container {
   max-width: 1200px;
+  padding: 0 1 rem;
+  align-items: center;
   margin: 0 auto;
   width: 100%;
   text-align: center;
