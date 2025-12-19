@@ -56,7 +56,8 @@ sub {
 
 /* === SECTIONS === */
 #main {
-  padding: 9vw 6vw 5vw 6vw;
+  margin-top: 130px;
+  padding: 2vw 12vw 5vw;
   background-color: #FCFAF9;
   color: #FCFAF9;
   text-align: center;
