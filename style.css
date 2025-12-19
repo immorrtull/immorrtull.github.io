@@ -1,7 +1,7 @@
 /* === GLOBAL STYLES === */
 html, body {
-  padding-top: 90px;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color:  #FCFAF9;
@@ -56,7 +56,7 @@ sub {
 
 /* === SECTIONS === */
 #main {
-  padding: 5vw 12vw;
+  padding: 9vw 6vw 5vw 6vw;
   background-color: #FCFAF9;
   color: #FCFAF9;
   text-align: center;
