@@ -27,6 +27,12 @@ const navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('active');
   });
 
+document.querySelectorAll('#nav-links a').forEach(link => {
+link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+
+});
 // Tabs
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
