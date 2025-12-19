@@ -113,6 +113,14 @@ sub {
 }
 
 /* === NAVIGATION BAR === */
+
+#main,
+#work,
+#About,
+#contact {
+  scroll-margin-top: 100px;
+}
+
 .nav-outer {
   position: fixed;
   top: 0;
