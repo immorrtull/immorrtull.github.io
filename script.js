@@ -19,6 +19,14 @@ const mediaItems = [
   { type: 'image', src: 'images/Image-1.png', description: 'Graphic Design Image', section: 'graphicdesign' },
 ];
 
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
 // Tabs
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {

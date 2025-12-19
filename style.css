@@ -10,6 +10,13 @@ html, body {
   overflow-x: hidden; /* prevents side-scrolling */
 }
 
+iframe {
+  max-width: 100%;
+  border: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -428,5 +435,122 @@ sub {
 @media (max-width: 900px) {
   .grid-item.portrait {
     grid-row: span 1; /* let them behave like normal items on smaller screens */
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tab-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #About {
+    padding: 10vw 6vw;
+  }
+
+  #About p, #About sub {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #contact {
+    padding: 12vw 6vw;
+  }
+
+  .contact-content img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p, sub {
+    font-size: 1rem;
+  }
+}
+
+/* === MOBILE NAV MENU === */
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 700px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none; /* hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #333;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  /* When menu is active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
