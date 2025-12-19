@@ -33,16 +33,6 @@ link.addEventListener('click', () => {
   });
 
 });
-// Tabs
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const target = tab.dataset.tab;
-    document.querySelectorAll('.work-section').forEach(section => section.classList.remove('active'));
-    document.getElementById(target).classList.add('active');
-  });
-});
 
 // Lightbox
 const lightbox = document.getElementById('lightbox');

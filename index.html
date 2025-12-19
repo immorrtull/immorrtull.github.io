@@ -52,87 +52,22 @@
   </div>
 
  <!-- Work Section -->
+
  <div id="work">
   <div class="container">
     <div class="work-content">
-      <div class=WorkTitle>
-      <h1>WORK</h1>
-      <sub>VIEW SAMPLES OF MY WORK IN POST-PRODUCTION.</sub>
-      </div>
-    <div class="work-spacer"></div>
-      <!-- Tabs -->
-      <div class="tab-container">
-        <div class="tab active" data-tab="documentary">DOCUMENTARY</div>
-        <div class="tab" data-tab="scripted">SCRIPTED</div>
-        <div class="tab" data-tab="socialmedia">SOCIAL-MEDIA</div>
-        <div class="tab" data-tab="podcasts">PODCASTS</div>
-        <div class="tab" data-tab="multimedia">MULTIMEDIA</div>
+      <div class="WorkTitle">
+        <h1>WORK</h1>
+        <sub>VIEW SAMPLES OF MY WORK IN POST-PRODUCTION.</sub>
       </div>
 
-      <!-- Tab Content -->
-      <div class="tab-content">
-        <div class="container">
+      <div class="work-spacer"></div>
 
-          <!-- Documentary Section -->
-          <div id="documentary" class="work-section active">
-            <div class="documentary-grid section-grid"></div>
-          </div>
-
-          <!-- Scripted Section -->
-          <div id="scripted" class="work-section">
-            <div class="scripted-grid section-grid"></div>
-          </div>
-
-          <!-- Social Media Section -->
-          <div id="socialmedia" class="work-section">
-            <div class="socialmedia-grid section-grid"></div>
-          </div>
-
-          <!-- Podcasts Section -->
-          <div id="podcasts" class="work-section">
-            <div class="podcasts-grid section-grid"></div>
-          </div>
-
-          <!-- Multimedia Section -->
-          <div id="multimedia" class="work-section">
-            <div class="multimedia-grid section-grid"></div>
-          </div>
-
-        </div>
-      </div>
+      <!-- ONE unified grid -->
+      <div class="section-grid all-work-grid"></div>
     </div>
   </div>
 </div>
-
-<!-- Lightbox (for modal viewing) -->
-<div id="lightbox" style="display: none;">
-  <div id="lightbox-content"></div>
-  <p id="lightbox-description"></p>
-  <span id="lightbox-close">&times;</span>
-</div>
-
-  <script>
-    const tabs = document.querySelectorAll('.tab');
-    const sections = document.querySelectorAll('.work-section');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-
-        // Set tab active state
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // Show only the selected section
-        sections.forEach(section => {
-          section.classList.remove('active');
-          if (section.id === target) {
-            section.classList.add('active');
-          }
-        });
-      });
-    });
-  </script>
 
 <!-- Bio Section -->
     <div id="About">
