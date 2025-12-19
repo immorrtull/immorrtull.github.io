@@ -396,122 +396,6 @@ sub {
 }
 
 /* === MEDIA QUERIES === */
-@media (max-width: 900px) {
-  .section-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  #contact {
-    padding: 40px 5vw;
-  }
-
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-text {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-@media (max-width: 900px) {
-  .section-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Optional: adjust for smaller screens */
-@media (max-width: 900px) {
-  .grid-item.portrait {
-    grid-row: span 1; /* let them behave like normal items on smaller screens */
-  }
-}
-
-@media (max-width: 700px) {
-  .nav-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .nav-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .tab-container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .tab {
-    flex: 1 1 45%;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
-
-  .section-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  #About {
-    padding: 10vw 6vw;
-  }
-
-  #About p, #About sub {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  #contact {
-    padding: 12vw 6vw;
-  }
-
-  .contact-content img {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  p, sub {
-    font-size: 1rem;
-  }
-}
-
 /* === MOBILE NAV MENU === */
 
 /* Hide hamburger on desktop */
@@ -522,14 +406,13 @@ sub {
   color: #333;
 }
 
-/* Mobile styles */
 @media (max-width: 700px) {
   .hamburger {
     display: block;
   }
 
   .nav-links {
-    display: none; /* hidden by default on mobile */
+    display: none;          /* hidden by default */
     flex-direction: column;
     width: 100%;
     background: white;
@@ -538,14 +421,8 @@ sub {
     gap: 1rem;
   }
 
-  .nav-links a {
-    font-size: 1.1rem;
-    text-align: left;
-  }
-
-  /* When menu is active */
   .nav-links.active {
-    display: flex;
+    display: flex;          /* shown on click */
   }
 
   .nav-bottom {
