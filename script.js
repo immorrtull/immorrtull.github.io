@@ -111,8 +111,8 @@ wrapper.appendChild(textWrapper);
 
 wrapper.addEventListener('click', () => openLightbox(item));
 
-    const sectionGrid = document.querySelector(`.${item.section}-grid`);
-    if (sectionGrid) sectionGrid.appendChild(wrapper);
+const sectionGrid = document.querySelector('.all-work-grid');
+if (sectionGrid) sectionGrid.appendChild(wrapper);
   });
 }
 
