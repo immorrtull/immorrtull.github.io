@@ -40,8 +40,12 @@ const lightboxContent = document.getElementById('lightbox-content');
 const lightboxDescription = document.getElementById('lightbox-description');
 const lightboxClose = document.getElementById('lightbox-close');
 
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+if (lightbox && lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
 function closeLightbox() { lightbox.style.display = 'none'; lightboxContent.innerHTML = ''; }
 
 // Responsive wrapper
