@@ -497,3 +497,34 @@ sub {
   border: none;
   object-fit: cover;
 }
+
+/* === HIDE BIRD ONLY ON MOBILE PHONES === */
+@media (max-width: 600px) {
+  #contact img {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-content {
+    justify-content: center;
+  }
+
+  .contact-text {
+    text-align: center;
+    padding-right: 0;
+  }
+}
+
+/* === MOBILE: STACK TITLE + SUBTITLE === */
+@media (max-width: 600px) {
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .nav-subtitle {
+    font-size: 0.75rem;
+  }
+}
