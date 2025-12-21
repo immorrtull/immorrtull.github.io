@@ -26,7 +26,7 @@ img {
 
 .container {
   max-width: 1200px;
-  padding: 0 1rem; /* FIXED: was `1 rem` */
+  padding: 0 1rem;
   align-items: center;
   margin: 0 auto;
   width: 100%;
@@ -37,14 +37,14 @@ img {
 
 .seeportfolio {
   font-family: 'Alegreya Sans', Helvetica, sans-serif;
-  padding: 10px 20px;           /* Add padding inside the button */
-  background-color: #025e3f;    /* Green background */
-  color: white;                 /* Text color */
+  padding: 10px 20px;
+  background-color: #025e3f;
+  color: white;
   border: black;
-  border-radius: 20px;           /* Rounded corners */
+  border-radius: 20px;
   font-size: clamp(1vw, 2vw, 3vw);
-  cursor: pointer;             /* Change cursor to pointer when hovering */
-  transition: background-color 0.3s ease; /* Smooth color transition on hover */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .seeportfolio:hover {
@@ -77,9 +77,12 @@ sub {
   margin-top: 110px;
   padding: 2vw 12vw 5vw;
   background-color: #FCFAF9;
-  color: #FCFAF9;
   text-align: center;
   font-size: 24px;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* optional: center vertically */
+  flex-direction: column;
 }
 
 #work {
@@ -89,18 +92,10 @@ sub {
   text-align: center;
 }
 
-.WorkTitle {
-  padding-bottom: 2vw;
-}
-
-.work-spacer {
-  padding-top: 5vw;
-}
-
 .workint {
-background-color: #FCFAF9;
-padding: 5vw 6vw 5vw 6vw;
-border-radius: 30px;
+  background-color: #FCFAF9;
+  padding: 5vw 6vw 5vw 6vw;
+  border-radius: 30px;
 }
 
 .work-section {
@@ -131,14 +126,7 @@ border-radius: 30px;
   object-fit: contain;
 }
 
-#documentary, #scripted, #socialmedia, #podcasts, #multimedia {
-  font-size: 12px;
-  text-align: left;
-  color: #FCFAF9;
-}
-
 /* === NAVIGATION BAR (UNCHANGED) === */
-
 #main,
 #work,
 #About,
@@ -207,7 +195,7 @@ border-radius: 30px;
   margin: 3.5px 0;
 }
 
-/* === GRID SECTIONS (FIXED + CLS SAFE) === */
+/* === GRID SECTIONS === */
 .section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -227,17 +215,13 @@ border-radius: 30px;
   pointer-events: none;
 }
 
-/* === VIDEO / MEDIA STYLES (CLS OPTIMIZED) === */
+/* === VIDEO / MEDIA STYLES === */
 .responsive-video {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: #000;
   aspect-ratio: 16 / 9;
-}
-
-.responsive-video.portrait {
-  aspect-ratio: 9 / 16;
 }
 
 .responsive-video iframe,
@@ -252,32 +236,12 @@ border-radius: 30px;
   object-fit: cover;
 }
 
-.responsive-video.portrait iframe,
-.responsive-video.portrait video,
-.responsive-video.portrait img {
-  object-fit: contain;
-  background: #000;
-}
-
-/* === MEDIA TEXT === */
-.grid-item .media-text {
-  padding: 0.5rem 0;
-  text-align: center;
-  width: 100%;
-}
-
-.grid-item .media-title {
-  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.7rem, 1.5vw, 1.2rem);
-  margin: 0;
-  color: #333;
-}
-
-.grid-item .media-subtitle {
-  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.5rem, 1.1vw, 1rem);
-  margin: 0;
-  color: #333;
+/* Fix iPhone hero video sizing */
+#main iframe,
+#main .responsive-video iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 /* === LIGHTBOX === */
@@ -326,50 +290,75 @@ border-radius: 30px;
 
 /* === CONTACT === */
 #contact {
-  display: flex;                     /* Use flexbox for layout */
-  flex-direction: column;             /* Stack items vertically */
-  padding: 4vw 12.5vw;                /* Adjust padding as needed */
+  display: flex;
+  flex-direction: column;
+  padding: 4vw 12.5vw;
   background-color: #df5a25;
   color: #FCFAF9;
   border-top: 2px solid #333;
-  align-items: center;                /* Center everything horizontally */
-  max-width: 1200px;                  /* Limit max width */
-  margin: 0 auto;                     /* Center the section */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* === CONTACT IMAGE & TEXT SECTION === */
 .contact-content {
-  display: flex;                     /* Use flexbox for the image and text to be side by side */
-  justify-content: space-between;     /* Space between the image and text */
-  align-items: center;                /* Center them vertically */
-  width: 100%;                        /* Ensure the section takes full width */
-  margin-bottom: rem;                /* Space between this section and the centered text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-/* === CONTACT TEXT === */
 .contact-text {
-  flex: 1;                            /* Allow text to take remaining space */
-  text-align: left;                   /* Align text to the left */
-  padding-right: 2rem;                /* Add spacing between text and image */
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
 }
 
-/* === CONTACT IMAGE === */
 #contact img {
-  max-width: 23%;                     /* Limit the image size */
-  height: auto;                       /* Keep aspect ratio */
-  object-fit: contain;                /* Ensure the image fits without distortion */
-  margin-right: 20px;                 /* Space between the image and text */
+  max-width: 23%;
+  height: auto;
+  object-fit: contain;
+  margin-right: 20px;
 }
 
-/* === CENTERED TEXT BELOW === */
 .centered-text {
-  text-align: center;                  /* Centers the text */
-  color: #FCFAF9;                      /* Light text color */
+  text-align: center;
+  color: #FCFAF9;
 }
 
 /* === MEDIA QUERIES === */
+@media (max-width: 900px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* === MOBILE NAV MENU (UNCHANGED) === */
+  #main .main-video {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #main {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  #main .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main .section-grid {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* === MOBILE NAV MENU === */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -403,23 +392,11 @@ border-radius: 30px;
   }
 }
 
-/* === RESPONSIVE GRID (SAFE) === */
-@media (max-width: 900px) {
-  .section-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* === RESPONSIVE GRID === */
 @media (max-width: 430px) {
 
   body {
-    font-size: 17px; /* iOS-friendly base size */
+    font-size: 17px;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -468,4 +445,26 @@ border-radius: 30px;
     font-size: 1rem;
     line-height: 1.6;
   }
+}
+
+
+/* Main Video Wrapper */
+#main .main-video,
+#main .container > div {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;        /* prevent oversized video on large screens */
+  aspect-ratio: 16 / 9;     /* maintain 16:9 ratio */
+  margin: 0 auto;           /* center horizontally */
+}
+
+/* Make iframe fill wrapper */
+#main .main-video iframe,
+#main .container > div iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
 }
