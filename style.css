@@ -327,14 +327,23 @@ border-radius: 30px;
 /* === CONTACT === */
 #contact {
   display: flex;                     /* Use flexbox for layout */
-  padding: 8vw 12.5vw;                /* Adjust padding as needed */
+  flex-direction: column;             /* Stack items vertically */
+  padding: 4vw 12.5vw;                /* Adjust padding as needed */
   background-color: #df5a25;
   color: #FCFAF9;
   border-top: 2px solid #333;
-  align-items: center;                /* Vertically center the content */
-  justify-content: space-between;     /* Space between image and text */
+  align-items: center;                /* Center everything horizontally */
   max-width: 1200px;                  /* Limit max width */
   margin: 0 auto;                     /* Center the section */
+}
+
+/* === CONTACT IMAGE & TEXT SECTION === */
+.contact-content {
+  display: flex;                     /* Use flexbox for the image and text to be side by side */
+  justify-content: space-between;     /* Space between the image and text */
+  align-items: center;                /* Center them vertically */
+  width: 100%;                        /* Ensure the section takes full width */
+  margin-bottom: rem;                /* Space between this section and the centered text */
 }
 
 /* === CONTACT TEXT === */
@@ -346,10 +355,16 @@ border-radius: 30px;
 
 /* === CONTACT IMAGE === */
 #contact img {
-  max-width: 25%;                    /* Limit the image size */
+  max-width: 23%;                     /* Limit the image size */
   height: auto;                       /* Keep aspect ratio */
   object-fit: contain;                /* Ensure the image fits without distortion */
   margin-right: 20px;                 /* Space between the image and text */
+}
+
+/* === CENTERED TEXT BELOW === */
+.centered-text {
+  text-align: center;                  /* Centers the text */
+  color: #FCFAF9;                      /* Light text color */
 }
 
 /* === MEDIA QUERIES === */
