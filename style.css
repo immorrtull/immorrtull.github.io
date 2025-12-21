@@ -388,11 +388,51 @@ sub {
 }
 
 /* === MOBILE NAV MENU === */
+/* Hamburger container */
 .hamburger {
-  display: none;
-  font-size: 2rem;
+  position: relative;
+  width: 32px;
+  height: 24px;
   cursor: pointer;
-  color: #333;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger lines */
+.hamburger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px; /* soft, editorial feel */
+  left: 0;
+  transition: all 0.4s ease;
+}
+
+/* Line positions */
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+/* Active state (X) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
 }
 
 @media (max-width: 700px) {
@@ -551,3 +591,16 @@ sub {
     animation-delay: 0.12s;
   }
 }
+
+/* === MOBILE: NAV TITLE BIGGER THAN H1 === */
+@media (max-width: 600px) {
+  .nav-title a {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  }
+}
+
