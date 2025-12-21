@@ -216,6 +216,35 @@ sub {
 }
 
 /* === VIDEO / MEDIA STYLES === */
+
+/* MEDIA TEXT (Titles + Descriptions) */
+.grid-item .media-text {
+  padding: 0.25rem 0;       /* reduce vertical spacing */
+  text-align: center;
+  width: 100%;
+}
+
+/* Media Title */
+.grid-item .media-title {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: clamp(0.6rem, 1.2vw, 1rem);  /* smaller and cleaner */
+  margin: 0;
+  color: #333;
+  font-weight: 500;         /* medium weight instead of bold */
+}
+
+/* Media Subtitle / Description */
+.grid-item .media-subtitle {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: clamp(0.5rem, 1vw, 0.85rem); /* smaller than title */
+  margin: 0;
+  color: #666;               /* lighter color for less “busy” look */
+  line-height: 1.3;
+  max-height: 3em;           /* limit to ~2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* add “...” if too long */
+}
+
 .responsive-video {
   position: relative;
   width: 100%;
