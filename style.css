@@ -97,6 +97,12 @@ sub {
   padding-top: 5vw;
 }
 
+.workint {
+background-color: #FCFAF9;
+padding: 5vw 6vw 5vw 6vw;
+border-radius: 30px;
+}
+
 .work-section {
   display: none;
   width: 100%;
