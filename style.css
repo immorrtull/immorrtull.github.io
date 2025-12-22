@@ -36,39 +36,39 @@ img {
 }
 
 .seeportfolio {
-  font-family: 'Alegreya Sans', Helvetica, sans-serif;
-  padding: 10px 20px;
-  background-color: #025e3f;
+  font-family: 'Vidaloka', Helvetica, sans-serif;
+  padding: 30px 20px;
+  background-color: #ff5500;
   color: white;
   border: black;
   border-radius: 20px;
-  font-size: clamp(1vw, 2vw, 3vw);
+  font-size: clamp(1rem, 3vw, 3rem);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .seeportfolio:hover {
-  background-color: #068144;
+  background-color: #ff5500;
   color: rgb(255, 255, 255);
 }
 
 /* === FONT STYLES === */
 h1 {
   font-family: "Vidaloka", Arial, Helvetica, sans-serif;
-  font-size: clamp(0.5rem, 3.5vw, 2rem);
+  font-size: clamp(1rem, 6vw, 2rem);
   font-weight: 400;
   margin-top: 0;
 }
 
 p {
-  font-size: clamp(0.5rem, 1.3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 3rem);
   font-family: 'Alegreya Sans', Helvetica, sans-serif;
   line-height: 1.6; 
 }
 
 sub {
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.5rem, 1.3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 3rem);
   padding-bottom: 1.5rem;
 }
 
@@ -110,7 +110,7 @@ sub {
 }
 
 #About {
-  padding: 5vw 10vw;
+  padding: 5vw 3vw;
   background-color: #FCFAF9;
   color: #333;
   max-width: 900px;
