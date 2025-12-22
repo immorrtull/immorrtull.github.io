@@ -1,8 +1,8 @@
 const mediaItems = [
-  { type: 'youtube', title: 'Urban Tree Insect Communities | Documentary', subtitle: "Researcher's Revealed Series, Beaty Biodiversity Museum (2025)", src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
-  { type: 'youtube', title: 'Machine Learning and Social Behaviour | Documentary', subtitle: "Researcher's Revealed Series, Beaty Biodiversity Museum (2025)", src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', section: 'documentary' },
-  { type: 'youtube', title: 'Coffee Shop | Promotional Video', subtitle: "Midnight Pancakes Productions (2024)",src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', section: 'scripted' },
-  { type: 'youtube', title: 'Selective Amnesia | Short Film', subtitle: "For Run N' Gun 24 Hour Film Festival (2024)",src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', section: 'scripted' },
+  { type: 'youtube', title: 'Urban Tree Insect Communities', subtitle: "Beaty Biodiversity Museum (2025)", src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
+  { type: 'youtube', title: 'Machine Learning & Social Behaviour', subtitle: "Beaty Biodiversity Museum (2025)", src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', section: 'documentary' },
+  { type: 'youtube', title: 'Coffee Shop', subtitle: "Midnight Pancakes Productions (2024)",src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', section: 'scripted' },
+  { type: 'youtube', title: 'Selective Amnesia | Short Film', subtitle: "Run N' Gun 24 Hour Film Festival (2024)",src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', section: 'scripted' },
   { type: 'youtube', title: 'Behind The Scenes | Podcast', subtitle: "University of British Columbia (2024)", src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', section: 'podcasts' },
   { type: 'youtube', title: 'Ian Efford & The METEI Expedition | Podcast', subtitle: "Beaty Biodiversity Museum (2024)", src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', section: 'podcasts' },
 ]

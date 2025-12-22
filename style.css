@@ -386,13 +386,13 @@ sub {
     width: 100%;
   }
 }
-
-/* === MOBILE NAV MENU === */
-/* Hamburger container */
+/* === HAMBURGER MENU === */
 .hamburger {
-  position: relative;
+  position: absolute;
+  top: 20px;   /* Adjust the vertical position */
+  right: 20px; /* Move the hamburger to the right side */
   width: 32px;
-  height: 24px;
+  height: 15px;
   cursor: pointer;
   display: inline-block;
   transition: transform 0.3s ease;
@@ -401,10 +401,10 @@ sub {
 /* Hamburger lines */
 .hamburger span {
   position: absolute;
-  height: 3px;
-  width: 100%;
+  height: 2px;
+  width: 60%;
   background-color: #333;
-  border-radius: 2px; /* soft, editorial feel */
+  border-radius: 2px;
   left: 0;
   transition: all 0.4s ease;
 }
@@ -414,10 +414,10 @@ sub {
   top: 0;
 }
 .hamburger span:nth-child(2) {
-  top: 10px;
+  top: 5px;
 }
 .hamburger span:nth-child(3) {
-  top: 20px;
+  top: 10px;
 }
 
 /* Active state (X) */
@@ -448,15 +448,11 @@ sub {
     border-top: 1px solid #333;
     padding: 1rem;
     gap: 1rem;
-    opacity: 0;
-    transform: translateY(-20px); /* Keep original movement */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Longer, smoother transition */
   }
 
   .nav-links.active {
     display: flex;
     opacity: 1;
-    transform: translateY(0); /* Keep original movement */
   }
 
   .nav-bottom {
