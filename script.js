@@ -7,12 +7,21 @@ const mediaItems = [
   { type: 'youtube', title: 'Ian Efford & The METEI Expedition | Podcast', subtitle: "Beaty Biodiversity Museum (2024)", src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', section: 'podcasts' },
 ]
 
-const hamburger = document.querySelector('.hamburger');
+// Select the hamburger, nav-links, and nav-title
+const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
+const navTitle = document.querySelector('.nav-title');
 
+// Add event listener to toggle 'active' class
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active'); // Optional: toggle hamburger animation
+  // Toggle visibility of nav links
+  navLinks.classList.toggle('active');  
+  
+  // Add active state to hamburger (for 'X' effect)
+  hamburger.classList.toggle('active');  
+  
+  // Add active state to nav-title (to allow title to wrap)
+  navTitle.classList.toggle('active');
 });
 
 document.querySelectorAll('#nav-links a').forEach(link => {
