@@ -9,10 +9,12 @@ const mediaItems = [
 
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+const navTitle = document.querySelector('.nav-title-subtitle');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navLinks.classList.toggle('active');
+  navTitle.classList.toggle('active'); // optional if using separate class toggle
 });
 
 document.querySelectorAll('#nav-links a').forEach(link => {
