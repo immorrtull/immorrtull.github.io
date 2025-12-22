@@ -435,7 +435,13 @@ sub {
   top: 10px;
 }
 
-@media (max-width: 700px) {
+/* Hide hamburger by default (desktop, iPads) */
+.hamburger {
+  display: none;
+}
+
+/* Show hamburger on small devices only (phones) */
+@media only screen and (max-width: 767px) {
   .hamburger {
     display: block;
   }
@@ -460,6 +466,12 @@ sub {
     align-items: center;
   }
 }
+
+  .nav-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 /* === RESPONSIVE GRID === */
 @media (max-width: 430px) {
