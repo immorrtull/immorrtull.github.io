@@ -386,13 +386,14 @@ sub {
     width: 100%;
   }
 }
-/* === HAMBURGER MENU === */
+/* === MOBILE NAV MENU === */
+/* Hamburger container */
 .hamburger {
-  position: absolute;
-  top: 20px;   /* Adjust the vertical position */
-  right: 20px; /* Move the hamburger to the right side */
+  position: absolute; /* Change to absolute */
+  top: 20px; /* Adjust top positioning if needed */
+  right: 20px; /* Position it on the right */
   width: 32px;
-  height: 15px;
+  height: 24px;
   cursor: pointer;
   display: inline-block;
   transition: transform 0.3s ease;
@@ -401,10 +402,10 @@ sub {
 /* Hamburger lines */
 .hamburger span {
   position: absolute;
-  height: 2px;
-  width: 60%;
+  height: 3px;
+  width: 100%;
   background-color: #333;
-  border-radius: 2px;
+  border-radius: 2px; /* soft, editorial feel */
   left: 0;
   transition: all 0.4s ease;
 }
@@ -414,10 +415,10 @@ sub {
   top: 0;
 }
 .hamburger span:nth-child(2) {
-  top: 5px;
+  top: 10px;
 }
 .hamburger span:nth-child(3) {
-  top: 10px;
+  top: 20px;
 }
 
 /* Active state (X) */
@@ -435,30 +436,80 @@ sub {
   top: 10px;
 }
 
+/* Make the hamburger visible on screens smaller than 700px */
 @media (max-width: 700px) {
   .hamburger {
     display: block;
   }
 
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 100%;
     background: white;
     border-top: 1px solid #333;
     padding: 1rem;
     gap: 1rem;
+    opacity: 0;   /* Initially hidden */
+    transform: translateY(-20px);  /* Start slightly above the screen */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
   }
 
+  /* Active class for nav-links */
   .nav-links.active {
-    display: flex;
+    opacity: 1;         /* Make it visible */
+    transform: translateY(0); /* Move it into place */
+  }
+
+  /* Stagger the appearance of each nav link */
+  .nav-links a {
+    opacity: 0;
+    transform: translateY(-10px); /* Start each link slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animate each link */
+  }
+
+  /* Animate each nav link when the menu is active */
+  .nav-links.active a {
     opacity: 1;
+    transform: translateY(0); /* Move each link to its natural position */
+  }
+
+  /* Delay the appearance of each item one by one */
+  .nav-links a:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links a:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links a:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links a:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .nav-links a:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
+  .nav-links a:nth-child(6) {
+    transition-delay: 0.6s;
   }
 
   .nav-bottom {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;  /* Update to align items to the left (or flex-end for right) */
     align-items: center;
+  }
+}
+
+/* Hide the hamburger menu on larger screens (iPads, desktops, etc.) */
+@media (min-width: 701px) {
+  .hamburger {
+    display: none;
   }
 }
 
