@@ -536,18 +536,3 @@ sub {
   }
 }
 
-@media (max-width: 768px) {
-  #contact img {
-    display: none;
-  }
-
-  .contact-content {
-    justify-content: center;
-  }
-
-  .contact-text {
-    padding-right: 0;
-    text-align: left;
-  }
-  
-  }
