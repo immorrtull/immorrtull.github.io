@@ -36,39 +36,48 @@ img {
 }
 
 .seeportfolio {
-  font-family: 'Vidaloka', Helvetica, sans-serif;
-  padding: 30px 20px;
-  background-color: #ff5500;
+  font-family: 'Alegreya Sans SC', Helvetica, sans-serif;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  background-color: #f96115;
   color: white;
-  border: black;
   border-radius: 20px;
-  font-size: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .seeportfolio:hover {
-  background-color: #ff5500;
-  color: rgb(255, 255, 255);
+  background-color: #db5715;
 }
 
-/* === FONT STYLES === */
+/* === HEADINGS === */
 h1 {
   font-family: "Vidaloka", Arial, Helvetica, sans-serif;
-  font-size: clamp(1rem, 6vw, 2rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 400;
   margin-top: 0;
 }
 
-p {
-  font-size: clamp(1rem, 2vw, 3rem);
-  font-family: 'Alegreya Sans', Helvetica, sans-serif;
-  line-height: 1.6; 
+h2 {
+  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 3.5vw, 2.2rem);
+  font-weight: 400;
+  margin-top: 0;
 }
 
+/* === BODY TEXT === */
+p {
+  font-family: 'Alegreya Sans', Helvetica, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* === SUBTEXT / SMALL CAPS === */
 sub {
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   padding-bottom: 1.5rem;
 }
 
@@ -274,6 +283,14 @@ sub {
   padding-right: 2rem;
 }
 
+.contact-link {
+  color: #FCFAF9;
+}
+
+.contact-link:hover {
+  color: #04AA6D;
+}
+
 #contact img {
   max-width: 23%;
   height: auto;
@@ -332,7 +349,7 @@ sub {
   background-color: #fff;
   opacity: 0.97;
   border-bottom: 2px solid #333;
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 
 .nav-divider {
@@ -380,7 +397,7 @@ sub {
 /* Subtitle */
 .nav-subtitle {
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: #333;
   opacity: 0.9;
 }
@@ -399,7 +416,7 @@ sub {
 
 .nav-links a {
   font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
-  font-size: clamp(0.6rem, 1.1vw, 1.1rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: #333;
   text-decoration: none;
 }
@@ -518,3 +535,19 @@ sub {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 768px) {
+  #contact img {
+    display: none;
+  }
+
+  .contact-content {
+    justify-content: center;
+  }
+
+  .contact-text {
+    padding-right: 0;
+    text-align: left;
+  }
+  
+  }
