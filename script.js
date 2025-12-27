@@ -1,10 +1,13 @@
+// Can add description, title, subtitle as needed.
+
 const mediaItems = [
-  { type: 'youtube', description: 'Urban Tree Insect Communities', src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
-  { type: 'youtube', description: 'Machine Learning & Social Behaviour', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', section: 'documentary' },
-  { type: 'youtube', description: 'Coffee Shop', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', section: 'scripted' },
-  { type: 'youtube', description: 'Selective Amnesia | Short Film', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', section: 'scripted' },
-  { type: 'youtube', description: 'Behind The Scenes | Podcast', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', section: 'podcasts' },
-  { type: 'youtube', description: 'Ian Efford & The METEI Expedition | Podcast', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', section: 'scripted' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', section: 'scripted' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/HPZYNsEt-1Y?si=IWtzmrADDdfwN4HX', section: 'podcasts' },
+  { type: 'youtube', src: 'https://www.youtube.com/embed/72gMCxgP2AE?si=t6cSdarAFhtNV-qN', section: 'podcasts' },
+
 ]
 
 // Select elements
