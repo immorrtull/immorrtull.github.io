@@ -1,7 +1,7 @@
 // Can add description, title, subtitle as needed.
 
 const mediaItems = [
-  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY',  section: 'documentary' },
+  { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/s8MvS728gZs?si=m-XtIKuXbPsZY7IY', section: 'documentary' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/RWLSxyOfkWc?si=p2vjv9KhuCzJwY52', section: 'documentary' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/h5vNnGchGic?si=nFV16A7bO2-NYu8A', section: 'scripted' },
   { type: 'youtube', src: 'https://www.youtube-nocookie.com/embed/lZPTGkBCxlk?si=7HqHskuOw9PgQi9f', section: 'scripted' },
