@@ -266,21 +266,12 @@ sub {
   color: #FCFAF9;
   border-top: 2px solid #333;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
 }
 
 .contact-text {
-  flex: 1;
-  text-align: left;
-  padding-right: 2rem;
+align-items: left;
+
+
 }
 
 .contact-link {
@@ -289,13 +280,6 @@ sub {
 
 .contact-link:hover {
   color: #04AA6D;
-}
-
-#contact img {
-  max-width: 23%;
-  height: auto;
-  object-fit: contain;
-  margin-right: 20px;
 }
 
 .centered-text {
