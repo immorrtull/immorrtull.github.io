@@ -99,8 +99,9 @@ sub {
 
 /* === SECTIONS === */
 #main {
+  scroll-margin-top: 11vh;
   margin-top: 110px;
-  padding: 2vw 12vw 5vw;
+  padding: 5vw 15vw 6vw;
   background-color: #FCFAF9;
   text-align: center;
   font-size: 24px;
@@ -111,7 +112,8 @@ sub {
 }
 
 #work {
-  padding: 9vw 6vw 5vw 6vw;
+  scroll-margin-top: 11vh;
+  padding: 6vw 6vw 5vw 6vw;
   background-color: #04AA6D;
   color: #FCFAF9;
   text-align: center;
@@ -135,7 +137,8 @@ sub {
 }
 
 #About {
-  padding: 5vw 3vw;
+  scroll-margin-top: 11vh;
+  padding: 5vw 5vw;
   background-color: #FCFAF9;
   color: #333;
   max-width: 900px;
@@ -277,7 +280,7 @@ sub {
 #contact {
   display: flex;
   flex-direction: column;
-  padding: 4vw 12.5vw;
+  padding: 6vw 12vw;
   background-color: #df5a25;
   color: #FCFAF9;
   align-items: center;
