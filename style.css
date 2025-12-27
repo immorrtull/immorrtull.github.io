@@ -35,10 +35,15 @@ img {
   flex-direction: column;
 }
 
-#seeportfolio {
+#portfoliotab {
   padding: 5vw 6vw 5vw 6vw;
   background-color: #04AA6D;
   color: #FCFAF9;
+  text-align: center;
+}
+
+#seeportfolio {
+  padding: 2vw 6vw 2vw 6vw;
   text-align: center;
 }
 
@@ -50,6 +55,7 @@ img {
   margin-top: 0;
   padding: 2vh 3vh;
   outline: none;
+  text-decoration: none;
   border: none;
   background-color: #333;
   color: white;
