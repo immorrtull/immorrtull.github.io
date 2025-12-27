@@ -35,21 +35,31 @@ img {
   flex-direction: column;
 }
 
+#seeportfolio {
+  padding: 5vw 6vw 5vw 6vw;
+  background-color: #04AA6D;
+  color: #FCFAF9;
+  text-align: center;
+}
+
 .seeportfolio {
-  font-family: 'Alegreya Sans SC', Helvetica, sans-serif;
-  padding: 10px 20px;
+  font-family: "Alegreya Sans SC", Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 400;
+  color: #333;
+  margin-top: 0;
+  padding: 2vh 3vh;
   outline: none;
   border: none;
-  background-color: #f96115;
+  background-color: #333;
   color: white;
-  border-radius: 20px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .seeportfolio:hover {
-  background-color: #db5715;
+  background-color: #666;
 }
 
 /* === HEADINGS === */
@@ -61,8 +71,8 @@ h1 {
 }
 
 h2 {
-  font-family: "Vidaloka", Arial, Helvetica, sans-serif;
-  font-size: clamp(1rem, 3.5vw, 2.2rem);
+  font-family: 'Alegreya Sans SC', Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 3vw, 1.7rem);
   font-weight: 400;
   margin-top: 0;
 }
