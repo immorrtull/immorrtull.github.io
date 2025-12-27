@@ -138,7 +138,7 @@ function openLightbox(item) {
     lightboxContent.appendChild(mediaElement);
   }
 
-  lightboxDescription.textContent = item.description || 'No description available';
+  lightboxDescription.textContent = item.description || ' ';
   lightbox.style.display = 'flex';
 }
 
