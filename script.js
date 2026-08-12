@@ -22,8 +22,6 @@ hamburger.addEventListener('click', () => {
   navTitle.classList.toggle('active');
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
-
 // Close menu when a nav link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
@@ -144,8 +142,8 @@ function openLightbox(item) {
   lightbox.style.display = 'flex';
 }
 
-
-
-
 // Initialize
 populateGrids();
+
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
